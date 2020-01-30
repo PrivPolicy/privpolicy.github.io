@@ -1,0 +1,117 @@
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Animista examples</title>
+		
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			
+			html, body {
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.container {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+			}
+			
+			.row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+			}
+			
+			.animContainer {
+				width: 300px;
+				height: 300px;
+				border: 5px solid black;
+				perspective: 500px;
+			}
+			
+			.square {
+				width: 140px;
+				height: 140px;
+				top: 80px;
+				left: 80px;
+				position: relative;
+				background-color: #34eb95;
+				border-radius: 20px;
+				font-size: 72px;
+				line-height: 140px;
+				text-align: center;
+				color: white;
+				font-family: "Verdana", sans-serif;
+			}
+			
+			.square.rotate-vert-center {
+				animation: rotate-vert-center 4s ease-in-out 0s infinite normal;
+			}
+			
+			.square.slide-br {
+				animation: slide-br 2s ease-in-out 0s infinite alternate;
+			}
+
+			.square.slide-rotate-hor-top {
+				animation: slide-rotate-hor-top 2s ease-in-out 0s infinite alternate;
+			}
+
+			.square.shadow-drop-center {
+				animation: shadow-drop-center 2s ease-in-out 0s infinite alternate;
+			}
+			
+			@keyframes rotate-vert-center {
+				0% {transform:rotateY(0deg);}
+				50% {transform:rotateY(180deg);}
+				100% {transform:rotateY(360deg);}
+			}
+			
+			@keyframes slide-br {
+				0% {transform:translate(0,0);}
+				100% {transform:translate(80px,80px);}
+			}
+
+			@keyframes slide-rotate-hor-top {
+				0% {transform: translateY(0) rotateX(0deg);}
+				100% {transform: translateY(-120px) rotateX(-70deg);}
+			}
+
+			@keyframes shadow-drop-center {
+				0% {box-shadow: none;}
+				100% {box-shadow: 0 0 30px 5px black;}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="animContainer">
+					<div class="square rotate-vert-center">Aa</div>
+				</div>
+				
+				<div class="animContainer">
+					<div class="square slide-br" style="top:40px;left:40px;">Aa</div>
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="animContainer">
+					<div class="square slide-rotate-hor-top" style="top:120px;">Aa</div>
+				</div>
+				
+				<div class="animContainer">
+					<div class="square shadow-drop-center">Aa</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

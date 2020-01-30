@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+	<head>
+		<title>Moja stronka iks de</title>
+		
+		<meta charset="UTF-8"/>
+		
+		<style>
+			.container {
+				width: 1000px;
+				height: 800px;
+				margin: auto;
+				background-color: #235F67;
+				border-radius: 30px;
+			}
+			
+			.header {
+				height: 100px;
+				text-align: right;
+				font-size: 32px;
+				letter-spacing: 5px;
+				line-height: 100px;
+				border-bottom: 5px dashed black;
+			}
+			
+			.iframeContainer {
+				width: 700px;
+				height: 500px;
+				background-color: #E48A10;
+				border-bottom: 5px dashed black;
+			}
+			
+			iframe {
+				border: none;
+				display: block;
+				height: 530px;
+				width: 650px;
+				background-color: inherit;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.linkownia {
+				width: 300px;
+				height: 500px;
+				background-color: #6AC2CC;
+				border-radius: 0px 0px 30px 0px;
+				border-left: 5px dotted black;
+			}
+			
+			.linkownia hr {
+				width: 80%;
+				border: 12px solid red;
+				border-radius: 12px;
+			}
+			
+			.linkownia img {
+				width: 190px;
+				height: 70px;
+				float: right;
+				margin-right: 15px;
+				margin-top: 22px;
+			}
+			
+			ol.main {
+				font-size: 18px;
+				margin-left: 15px;
+				list-style-type: upper-roman;
+			}
+			
+			ol.portale {
+				margin-left: 5px;
+				list-style-type: lower-greek;
+			}
+			
+			.al {
+				text-align: left;
+			}
+			
+			.ac {
+				text-align: center;
+			}
+			
+			.footer {
+				width: 700px;
+				height: 150px;
+				background-color: #C0C0C0;
+				border-radius: 0px 0px 0px 30px;
+			}
+			
+			.footer img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			a:link {
+				text-decoration: inherit;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<map name="mapa">
+			<area shape="circle" coords="25,40,20" href="http://www.kolo.pl" alt="Tu miał być link">
+			<area shape="poly" coords="100,35,161,66,95,103,42,65" href="http://www.romb.pl" target="_blank" alt="ale go nie ma.">
+			<area shape="rect" coords="151,7,224,45" href="http://www.trapez.pl" target="ramka" alt="Trudno, życie.">
+		</map>
+		
+		<table class="container">
+			<tr>
+				<td class="header" colspan="2"><span style="margin-right:20px;">Niepotrzebne skreślić: <b>Psy | <span style="text-decoration:line-through;">Koty</span></b></span></td>
+			</tr>
+			
+			<tr>
+				<td class="iframeContainer">
+					<iframe name="ramka"></iframe>
+				</td>
+				
+				<td rowspan="2" class="linkownia">
+					<nav class="ac" style="margin-bottom:170px;">
+						<!--<div class="red"></div>-->
+						<hr style="margin-top: 20px"/>
+						<p style="font-size:24px;">LINKOWNIA</p>
+						<ol class="main">
+							<li>
+								<p class="al">
+								<a href="./2_PT/pt.html" target="ramka">Pan Tadeusz</a>
+								<br/>
+								<a href="./2_PT/pt.html#ak1" target="ramka">1</a> | 
+								<a href="./2_PT/pt.html#ak2" target="ramka">2</a> | 
+								<a href="./2_PT/pt.html#ak3" target="ramka">3</a> | 
+								<a href="./2_PT/pt.html#ak4" target="ramka">4</a> | 
+								<a href="./2_PT/pt.html#ak5" target="ramka">5</a> | 
+								<a href="./2_PT/pt.html#ak6" target="ramka">6</a> | 
+								<a href="./2_PT/pt.html#ak7" target="ramka">7</a> | 
+								<a href="./2_PT/pt.html#ak8" target="ramka">8</a> | 
+								<a href="./2_PT/pt.html#ak9" target="ramka">9</a></p>
+							</li>
+							
+							<li>
+								<span class="al" style="display:block;">Portale</span>
+								
+								<ol class="portale">
+									<li style="margin-bottom: 100px;">
+										<a href="https://o2.pl" target="_blank"><img src="https://i.imgur.com/46ijuVm.jpg" alt="Coś poszło nie tak"></a>
+									</li>
+									
+									<li>
+										<a href="https://onet.pl" target="_blank"><img src="http://www.wisła.pl/imagefly/w970-h642/media/upload/o/n/onet.jpg" alt="Coś poszło nie tak v2"></a>
+									</li>
+								</ol>
+							</li>
+							
+							<li style="padding-top:80px">
+								<p class="al"><a href="c1_listy_tabele_encje.html" target="_blank">Tabele</a></p>
+							</li>
+						</ol>
+						
+						<hr />
+						
+						<p class="al" style="margin-left: 15px; font-style:italic; font-size:20px;">Chrzań ufną belgijskość, tęp wyż-młódź!</p>
+					</nav>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="footer">
+					<img src="./2_PT/mapa.jpg" alt="Coś poszło nie tak v3" usemap="#mapa">
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

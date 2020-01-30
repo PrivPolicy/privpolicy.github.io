@@ -1,0 +1,154 @@
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Codepen exercises</title>
+		
+		<style>
+			/** {
+				box-sizing: border-box;
+			}*/
+			
+			html, body {
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				padding: 40px;
+			}
+			
+			.container {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.row {
+				position: relative;
+				height: 300px;
+				width: 60%;
+				border: 4px solid black;
+				margin: 20px auto;
+			}
+
+			.box {
+				height: 300px;
+				width: 300px;
+				position: relative;
+				border: 4px solid black;
+				margin: 20px auto;
+			}
+			
+			.ball-1 {
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: pink;
+				left: 100px;
+				top: 75px;
+			}
+
+			.ball-2 {
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				background-color: blue;
+				left: 450px;
+				top: 145px;
+			}
+
+			#ex1:active .ball-1 {
+				transition: left 0.5s ease-in;
+				left: 310px;
+			}
+
+			#ex1:active .ball-2 {
+				transition: left 1.5s ease-out 0.5s;
+				left: 600px;
+			}
+
+			.bar-ex2 {
+				height: 100px;
+				width: 100px;
+				margin: 100px 0;
+				background-color: red;
+				transition: width 2s ease-in-out;
+			}
+
+			#ex2:hover .bar-ex2{
+				width: 100%;
+			}
+
+			.bar-1-ex3 {
+				height: 105px;
+				width: 100px;
+				margin: 29px 0 28px 0;
+				background-color: red;
+				transition: width 1s ease-in-out;
+			}
+
+			.bar-2-ex3 {
+				height: 105px;
+				width: 100px;
+				background-color: blue;
+				transition: width 1s ease-in-out 1s;
+			}
+
+			#ex3:hover .bar-1-ex3, #ex3:hover .bar-2-ex3 {
+				width: 100%;
+			}
+
+			.box-ex4 {
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				transition: transform 1s ease-in-out;
+			}
+
+			.text-ex4 {
+				position: absolute;
+				top: 90px;
+				left: 90px;
+				font-size: 36px;
+			}
+
+			#ex4:hover .box-ex4.rotate-clockwise {
+				transform: rotate(90deg);
+			}
+
+			#ex4:hover .box-ex4.rotate-counterclockwise {
+				transform: rotate(-90deg);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div id="ex1" class="row">
+				<div class="ball-1"></div>
+				<div class="ball-2"></div>
+			</div>
+				
+			<div id="ex2" class="row">
+				<div class="bar-ex2"></div>
+			</div>
+
+			<div id="ex3" class="row">
+				<div class="bar-1-ex3"></div>
+				<div class="bar-2-ex3"></div>
+			</div>
+
+			<div id="ex4" class="box">
+				<p class="text-ex4">Hidden</p>
+				<div class="box-ex4 rotate-clockwise" style="background-color:red;transform-origin:top left;top:0;left:0;"></div>
+				<div class="box-ex4 rotate-counterclockwise" style="background-color:yellow;transform-origin:top right;top:0;right:0;"></div>
+				<div class="box-ex4 rotate-counterclockwise" style="background-color:blue;transform-origin:bottom left;bottom:0;left:0;"></div>
+				<div class="box-ex4 rotate-clockwise" style="background-color:green;transform-origin:bottom right;bottom:0;right:0;"></div>
+			</div>
+		</div>
+	</body>
+</html>

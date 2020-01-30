@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Codepen exercises</title>
+		
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			
+			html, body {
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.container {
+				width: 100%;
+				height: 100%;
+			}
+
+			.treeContainer {
+				width: 600px;
+				height: 600px;
+				border: 4px solid black;
+				margin: 0 auto;
+			}
+
+			#snowflakeContainer {
+				position: relative;
+				width: 600px;
+				height: 80px;
+				margin: 0 auto;
+				background: blue;
+			}
+
+			.snowflake {
+				position: absolute;
+				top: 0;
+				animation: falling-snow 6s linear 0s infinite normal;
+			}
+
+			@keyframes falling-snow {
+				0% {top: 0px;}
+				100% {top: 700px;}
+			}
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+
+			.snowflakeCoverUpper {
+				position: fixed;
+				left: calc((100% - 600px) / 2);
+				top: 0px;
+				width: 600px;
+				height: 80px;
+				background: white;
+				box-sizing: content-box;
+				border-bottom: 4px solid black;
+			}
+
+			.snowflakeCoverLower {
+				position: fixed;
+				left: calc((100% - 600px) / 2);
+				top: 676px;
+				width: 600px;
+				height: 80px;
+				background: white;
+				box-sizing: content-box;
+				border-top: 4px solid black;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div id="snowflakeContainer">
+				<div class="snowflake" style="left:53px;animation-duration:4.3s;animation-delay:1.7s;"><img src="snowflake50.png" /></div>
+				<div class="snowflake" style="left:154px;animation-duration:5.2s;animation-delay:1.2s;"><img src="snowflake70.png" /></div>
+				<div class="snowflake" style="left:286px;animation-duration:5.4s;animation-delay:2.3s;"><img src="snowflake50.png" /></div>
+				<div class="snowflake" style="left:312px;animation-duration:4.8s;animation-delay:4.4s;"><img src="snowflake60.png" /></div>
+				<div class="snowflake" style="left:467px;animation-duration:6.0s;animation-delay:1.9s;"><img src="snowflake50.png" /></div>
+				<div class="snowflake" style="left:524px;animation-duration:4.7s;animation-delay:3.7s;"><img src="snowflake70.png" /></div>
+				<div class="snowflake" style="left:96px;animation-duration:4.0s;animation-delay:4.1s;"><img src="snowflake60.png" /></div>
+				<div class="snowflake" style="left:365px;animation-duration:5.9s;animation-delay:2.7s;"><img src="snowflake50.png" /></div>
+				<div class="snowflake" style="left:410px;animation-duration:5.1s;animation-delay:3.2s;"><img src="snowflake50.png" /></div>
+			</div>
+			
+			<div class="snowflakeCoverUpper"></div>
+
+			<div class="treeContainer">
+				<svg>
+					<path d="m 300 70 L 450 300 L 400 300 L 490 430 L 450 430 L 520 545 L 80 545 L 150 430 L 110 430 L 200 300 L 150 300 z" style="fill:green;"/>
+					<path d="m 320 545 L 320 575 L 280 575 L 280 545 z" style="fill:brown;"/>
+					<path d="m 300 78 L 275 95 L 285 65 L 260 45 L 290 45 L 300 15 L 310 45 L 340 45 L 315 65 L 325 95 " style="fill:#fcca03;"/>
+				</svg>
+			</div>
+
+			<div class="snowflakeCoverLower"></div>
+		</div>
+	</body>
+</html>

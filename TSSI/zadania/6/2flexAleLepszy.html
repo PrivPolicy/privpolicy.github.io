@@ -1,0 +1,149 @@
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>2 FLEX</title>
+		
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			
+			html, body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.container {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.header {
+				background-color: red;
+				position: fixed;
+				top: 0;
+				height: 10vh;
+				width: 100%;
+				z-index: 5;
+				color: white;
+				font-size: 36px;
+				text-align: center;
+			}
+			
+			.content {
+				min-height: 80vh;
+				width: 100%;
+				position: absolute;
+				top: 10vh;
+				display: flex;
+				flex-direction: row;
+				margin-bottom: 10vh;
+			}
+			
+			.column1 {
+				background-color: green;
+				flex: 0 0 25%;
+				min-height: 100%;
+			}
+			
+			.column2 {
+				background-color: blue;
+				flex: 0 0 50%;
+				min-height: 100%;
+			}
+			
+			.column3 {
+				background-color: cyan;
+				flex: 0 0 25%;
+				min-height: 100%;
+			}
+			
+			.footer {
+				background-color: yellow;
+				position: fixed;
+				bottom: 0;
+				height: 10vh;
+				width: 100%;
+				z-index: 5;
+				color: white;
+				font-size: 36px;
+				text-align: center;
+			}
+
+			.squareContainer {
+				width: 30vw;
+				height: 30vw;
+				outline: 5px solid white;
+				background-color: rgb(225, 0, 255);
+				margin: 40px auto;
+				padding: 5px;
+			}
+
+			.centeredBlock {
+				width: 15vw;
+				height: 15vw;
+				background-color: orange;
+				color: white;
+				font-size: 24px;
+				text-align: center;
+			}
+			
+			.spanLi {
+				font-size: 24px;
+				color: white;
+				outline: 3px solid black;
+			}
+
+			.spanLiPiNw {
+				font-size: 20px;
+				color: white;
+				background-color: orange;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="header">To zawsze zostaje na swoim miejscu</div>
+			
+			<div class="content">
+				<div class="column1"></div>
+				<div class="column2">
+					<div class="squareContainer">
+						<div class="centeredBlock" style="margin: 0 auto">Blok poziom margin 0 auto</div>
+					</div>
+					<div class="squareContainer" style="text-align: center">
+						<span class="spanLi">Liniowy poziom parent text-align</span>
+					</div>
+					<div class="squareContainer" style="position:relative">
+						<div class="centeredBlock" style="font-size:20px; position:absolute; top: 50%; margin-top: -25%;">Blok pion znana wysokość negative margin</div>
+					</div>
+					<div class="squareContainer" style="position: relative;">
+						<span class="spanLiPiNw">Blok pion nieznana wysokosc</span>
+					</div>
+					<div class="squareContainer" style="padding: 15vw 5px;">
+						<span class="spanLi" style="font-size: 20px;">Liniowy pion single line</span>
+					</div>
+					<div class="squareContainer" style="display: table;">
+						<span style="font-size: 18px; display: table-cell; vertical-align: middle;">
+							Liniowy pion multi line<br>
+							Liniowy pion multi line<br>
+							Liniowy pion multi line<br>
+							Liniowy pion multi line<br>
+							Liniowy pion multi line
+						</span>
+					</div>
+				</div>
+				<div class="column3"></div>
+			</div>
+			
+			<div class="footer" style="color: black;">To też</div>
+		</div>
+	</body>
+</html>

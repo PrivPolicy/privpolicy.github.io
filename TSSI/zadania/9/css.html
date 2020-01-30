@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>CSS</title>
+
+		<script src="https://kit.fontawesome.com/33a150093d.js" crossorigin="anonymous"></script>
+		
+		<style>
+			@font-face {
+				font-family: customFont1;
+				src: url(./font1.ttf);
+				font-weight: regular;
+			}
+			
+			@font-face {
+				font-family: customFont2;
+				src: url(./font2.otf);
+				font-weight: regular;
+			}
+			
+			@import url('https://fonts.googleapis.com/css?family=Germania+One&display=swap');
+
+			* {
+				box-sizing: border-box;
+			}
+			
+			html, body {
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.container {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.header {
+				background-color: white;
+				border-bottom: 3px dotted black;
+				width: 100%;
+				height: 10%;
+			}
+			
+			.content {
+				width: 100%;
+				height: 80%;
+				display: flex;
+				flex-direction: row;
+			}
+			
+			.column1 {
+				background-color: green;
+				flex: 0 0 25%;
+			}
+			
+			.column2 {
+				background-color: white;
+				flex: 0 0 50%;
+				overflow: scroll;
+				position: relative;
+			}
+			
+			.column2::after {
+				content: "";
+				transform: scale(0.7);
+				background-image: url("background.jpg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: scroll;
+				position: absolute;
+				opacity: 0.6;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				
+			}
+			
+			.column2 p {
+				margin: 2vh;
+				font-size: 1.2em;
+			}
+			
+			.column3 {
+				background-color: red;
+				flex: 0 0 25%;
+			}
+			
+			.footer {
+				background-color: pink;
+				width: 100%;
+				height: 10%;
+			}
+			
+			.overlay {
+				position: fixed;
+				opacity: 0.7;
+				border-bottom: 0.3vh solid black;
+				border-radius: 0 0 50px 50px;
+				background-color: white;
+				width: 20vw;
+				height: 5vh;
+				font-size: 18px;
+				line-height: 5vh;
+				text-align: center;
+				font-weight: bold;
+				overflow: hidden;
+			}
+
+			.centerContainer {
+				display: flex;
+				justify-content: center;
+				background-color: yellow;
+			}
+			
+			.smallBox {
+				box-sizing: initial;
+				width: 20vw;
+				height: 10vw;
+				float: left;
+				background-color: red;
+				border: 8px solid green;
+				outline: 8px solid orange;
+			}
+
+			.gradientBox {
+				width: 30vw;
+				height: 15vw;
+				border: 3px solid black;
+				margin: auto;
+				background: linear-gradient(to right, red, yellow,green,blue,purple);
+				color: white;
+				font-size: 36px;
+				line-height: calc(15vw - 0.5em);
+				text-align: center;
+			}
+
+			.shadowBox {
+				width: 30vw;
+				height: 15vw;
+				border: 1px solid black;
+				margin: auto;
+				font-size: 24px;
+				line-height: calc(15vw - 0.5em);
+				text-align: center;
+				box-shadow: 15px 15px 10px rgba(8, 150, 245, 0.746);
+				font-weight: bold;
+				text-shadow: 0 0 5px red, 0 0 10px blue;
+			}
+
+			.textEffectSpan {
+				font-size: 18px;
+				display: inline-block;
+				border: 1px solid black;
+				width: 150px;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 2px 5px;
+			}
+
+			.textEffectSpan:hover {
+				overflow: visible;
+			}
+
+			.textEffectSpan2 {
+				font-size: 18px;
+				display: inline-block;
+				border: 1px solid black;
+				width: 150px;
+				padding: 2px 5px;
+			}
+
+			.textEffectSpan3 {
+				font-size: 18px;
+				display: inline-block;
+				border: 1px solid black;
+				width: 150px;
+				padding: 2px 5px;
+			}
+
+			.textEffectSpan4 {
+				font-size: 18px;
+				display: inline-block;
+				border: 1px solid black;
+				padding: 2px 5px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="header"></div>
+			
+			<div class="content">
+				<div class="column1">
+					<div class="overlay" style="left:2.5vw;top:10vh;">Lewa kolumna</div>
+				</div>
+				
+				<div class="column2">
+					<div class="overlay" style="left: 40vw">Właściwy content</div>
+					
+					<p>Two boxes with a green border and orange outline. Unlike border, it does not add to element's total width and height and may overlap with other elements as it's drawn last.</p>
+					<div class="centerContainer">
+						<div class="smallBox"></div>
+						<div class="smallBox"></div>
+					</div>
+					
+					</br>
+					</br>
+					</br>
+					
+					<p>Text with a different <span style="color:red;">color</span>, <span style="letter-spacing: 3px;">letter spacing</span> and <span style="text-shadow:3px 3px cyan;">shadow</span>.</p>
+					
+					</br>
+					</br>
+					</br>
+					
+					<p>Font with a <span style="font-size: 2em;">different size</span>, <span style="font-weight: bold;">different weight</span> and <span style="font-variant: small-caps;">small caps</span> (here WITHOUT).</p>
+					
+					</br>
+					</br>
+					</br>
+					
+					<p>Custom imported <span style="font-family:customFont1; font-weight:regular;color:#666000;">customFont1, which may be hard to read but at least it got STYLE</span> and <span style="font-family:customFont2;color:#666000; font-weight:regular;">customFont2, which is quite nicer to look at but lacks STYLE</span>. Alongside those, we have <span style="font-family:'Germania One', cursive;color:#666000;">one font imported from Google Fonts</span>.</p>
+					
+					</br>
+					</br>
+					</br>
+
+					<div style="text-align: center; font-size: 48px;">
+						<i class="fab fa-apple"></i>
+						<i class="fas fa-ban"></i>
+						<i class="fas fa-biohazard"></i>
+						<i class="fab fa-bluetooth"></i>
+						<i class="fab fa-btc"></i>
+					</div>
+
+					</br>
+					</br>
+					</br>
+
+					<div class="gradientBox">
+						<span>Gradient</span>
+					</div>
+
+					</br>
+					</br>
+					</br>
+
+					<div class="shadowBox">
+						<span>Box / Text shadow</span>
+					</div>
+
+					</br>
+					</br>
+					</br>
+
+					<div style="text-align:center;margin-bottom:40px;">
+						<span style="font-size:24px;">text-overflow (hover to see entire text)</span></br>
+						<span>clip: </span><span class="textEffectSpan" style="text-overflow:clip;">Lorem ipsum dolor sit amet.</span></br>
+						<span>ellipsis: </span><span class="textEffectSpan" style="text-overflow:ellipsis;">Lorem ipsum dolor sit amet.</span>
+					</div>
+
+					<div style="text-align:center;margin-bottom:40px;">
+						<span style="font-size:24px;">word-wrap</span></br>
+						<span>normal: </span><span class="textEffectSpan2" style="word-wrap:normal;">Lorem ipsum dolortgfhdfhdxgfdghfhdgx sit amet.</span></br>
+						<span>break-word: </span><span class="textEffectSpan2" style="word-wrap:break-word;">Lorem ipsum dolorgfdrsfdghfhgdfyhdrtg sit amet.</span>
+					</div>
+
+					<div style="text-align:center;margin-bottom:40px;">
+						<span style="font-size:24px;">word-break</span></br>
+						<span>keep-all: </span><span class="textEffectSpan3" style="word-break:keep-all;">Lorem ipsumeeeeeeeeeeeeeeeeee dolor-tgfhd-fhdx-gfdg-hfh-dgx sit amet.</span></br>
+						<span>break-all: </span><span class="textEffectSpan3" style="word-break:break-all;">Lorem ipsumeeeeeeeeeeeeeeeeeeeeeeeee dolo-rgfd-rsfd-ghfh-gdfyh-drtg sit amet.</span>
+					</div>
+
+					<div style="text-align:center;margin-bottom:40px;">
+						<span style="font-size:24px;">writing-mode</span></br>
+						<span>horizontal-tb: </span><span class="textEffectSpan4" style="writing-mode: horizontal-tb;">Loreeeeem</span></br>
+						<span>vertical-rl: </span><span class="textEffectSpan4" style="writing-mode: vertical-rl;">Loreeeeem</span>
+					</div>
+					
+					</br>
+					</br>
+					</br>
+				</div>
+				
+				<div class="column3">
+					<div class="overlay" style="right:2.5vw;top:10vh;">Prawa kolumna</div>
+				</div>
+			</div>
+			
+			<div class="footer"></div>
+		</div>
+	</body>
+</html>
