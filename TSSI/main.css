@@ -18,6 +18,15 @@ body {
     position: relative;
 }
 
+#navButton {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20vw;
+    min-width: 200px;
+    background-color: #ffffff;
+}
+
 #container {
     position: absolute;
     width: 40vw;
@@ -42,7 +51,7 @@ body {
     display: block;
     width: 100%;
     height: calc(80vh / 6);
-    background-color: var(--sec-bg-color);
+    background-color: #171a1d;
     color: #707070;
     cursor: not-allowed;
     text-align: center;
