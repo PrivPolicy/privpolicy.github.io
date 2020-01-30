@@ -39,6 +39,7 @@ body {
     font-family: var(--root-font-family);
     font-size: 5rem;
     overflow: hidden;
+    transition: background-color 0.15s;
 }
 
 @media (max-width: 800px) {

@@ -77,6 +77,11 @@ body {
 .right a:any-link {
     color: var(--link-href);
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.right a:any-link:hover {
+    background-color: #303030;
 }
 
 @media (max-width: 1600px) {
