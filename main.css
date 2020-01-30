@@ -6,7 +6,7 @@ html, body {
     padding: 0;
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 html {
@@ -27,17 +27,6 @@ body {
     left: 30vw;
 }
 
-@media (max-width: 600px) {
-    #container {
-        position: absolute;
-        width: 70vw;
-        height: 80vh;
-        background-color: white;
-        top: 10vh;
-        left: calc((100% - 70vw) / 2);
-    }
-}
-
 #container a {
     display: block;
     width: 100%;
@@ -50,6 +39,21 @@ body {
     font-family: var(--root-font-family);
     font-size: 5rem;
     overflow: hidden;
+}
+
+@media (max-width: 800px) {
+    #container {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        background-color: white;
+        top: 0;
+        left: 0;
+    }
+
+    #container a {
+        height: calc(100% / 6);
+    }
 }
 
 #container a:any-link {
