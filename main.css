@@ -21,11 +21,21 @@ body {
 #container {
     position: absolute;
     width: 40vw;
-    min-width: 300px;
     height: 80vh;
     background-color: white;
     top: 10vh;
-    left: min(calc((100% - 300px) / 2), 30vw);
+    left: 30vw;
+}
+
+@media (max-width: 600px) {
+    #container {
+        position: absolute;
+        width: 70vw;
+        height: 80vh;
+        background-color: white;
+        top: 10vh;
+        left: calc((100% - 70vw) / 2);
+    }
 }
 
 #container a {
