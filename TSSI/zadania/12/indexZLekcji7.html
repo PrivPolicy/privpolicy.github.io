@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Layout 7 ale w GRIDzie</title>
+        
+        <link href="/css/removeLinkStyle.css" rel="stylesheet">
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .container {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 50% 1fr;
+                grid-template-rows: 1fr 70% 1fr;
+                grid-template-areas:
+                    ". . ."
+                    ". . ."
+                    "footer footer footer";
+            }
+
+            .header {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                background-color: white;
+                border-bottom: 3px dotted black;
+            }
+
+            .column1 {
+                grid-column: 1/2;
+                grid-row: 2/3;
+                display: grid;
+                grid-template: 40px 1fr / 1fr;
+                background-color: green;
+            }
+
+            .overlay1 {
+                width: 70%;
+                justify-self: center;
+                grid-column: span 1;
+                grid-row: span 1;
+                background-color: rgb(225,225,225);
+                opacity: 0.6;
+                border-radius: 0 0 40px 40px;
+                text-align: center;
+                line-height: 40px;
+                font-size: 24px;
+                border-bottom: 3px solid black;
+            }
+
+            .column2 {
+                position: relative;
+                grid-column: 2/3;
+                grid-row: 2/3;
+                background-color: white;
+                overflow: scroll;
+                padding: 60px 20px 0 20px;
+                justify-items: right;
+                display: grid;
+            }
+
+            .overlay2 {
+                top: 0px;
+                position: absolute;
+                width: 70%;
+                justify-self: center;
+                grid-column: span 1;
+                grid-row: span 1;
+                background-color: rgb(225,225,225);
+                opacity: 0.6;
+                border-radius: 0 0 40px 40px;
+                text-align: center;
+                line-height: 40px;
+                font-size: 24px;
+                border-bottom: 3px solid black;
+            }
+
+            .column2::after {
+				content: "";
+				transform: scale(0.7);
+				background-image: url("background.jpg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: scroll;
+				position: absolute;
+				opacity: 0.5;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+            }
+
+            .column3 {
+                grid-column: 3/4;
+                grid-row: 2/3;
+                display: grid;
+                grid-template: 40px 1fr / 1fr;
+                background-color: red;
+            }
+
+            .overlay3 {
+                width: 70%;
+                justify-self: center;
+                grid-column: span 1;
+                grid-row: span 1;
+                background-color: rgb(225,225,225);
+                opacity: 0.6;
+                border-radius: 0 0 40px 40px;
+                text-align: center;
+                line-height: 40px;
+                font-size: 24px;
+                border-bottom: 3px solid black;
+            }
+
+            .footer {
+                grid-area: footer;
+                background-color: pink;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header"></div>
+            <div class="column1">
+                <div class="overlay1">
+                    Left
+                </div>
+            </div>
+            <div class="column2">
+                <div class="overlay2">Main</div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in finibus nisi. Aenean lobortis efficitur lorem, sit amet ullamcorper turpis imperdiet et. Proin ultrices tellus sit amet ligula vehicula, bibendum efficitur dui pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus nec maximus justo. Nam convallis, justo eget pretium congue, urna arcu eleifend sem, ac elementum mauris nisi nec sem. Sed eget sem sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget augue lacinia, convallis sapien vitae, molestie dui. Proin pulvinar, turpis non interdum lobortis, lectus arcu vehicula diam, id venenatis purus purus et mauris. Suspendisse vestibulum faucibus leo in consequat. Vestibulum bibendum urna eros, vel eleifend orci rhoncus a. Maecenas et eros turpis. Ut malesuada nec turpis eget interdum. Duis commodo elit dolor, vitae sollicitudin sem venenatis sed.
+
+                Nam at tempor metus. Nullam dui sapien, facilisis ut sapien eget, sagittis aliquet sem. Nullam porttitor nunc nec est ullamcorper, nec venenatis sapien eleifend. Donec eget arcu id risus dapibus consectetur. Aliquam erat volutpat. Aenean egestas laoreet blandit. Donec venenatis neque nec erat maximus, a ornare ante eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur a fermentum purus, nec condimentum lacus. Aenean eu mollis magna. Sed consequat eleifend pharetra. Vivamus suscipit, dui eget accumsan tempor, risus lorem posuere justo, ac vestibulum nunc metus molestie est. Donec auctor justo quis felis luctus, ac semper nibh tempor. Integer mollis in justo porttitor interdum. Nunc efficitur, odio at luctus convallis, lectus orci mollis quam, in rhoncus ligula lacus eget ipsum. Integer et arcu odio.
+                
+                Vestibulum tellus enim, dapibus id laoreet ac, ullamcorper ut ligula. Curabitur magna turpis, luctus sed libero quis, interdum vulputate ante. Duis placerat euismod congue. Nunc auctor ipsum metus, vel varius nunc pretium in. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque risus massa, rhoncus eu imperdiet eu, lobortis et dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum fermentum mauris non ex tincidunt, sit amet pulvinar nibh tristique. Donec tristique ultricies sem vitae maximus. Vestibulum quis feugiat metus, eu euismod elit. Ut eu ante sit amet enim eleifend suscipit. Proin posuere ut enim sit amet auctor. Aliquam ullamcorper dolor et nisi scelerisque lacinia. Aliquam euismod aliquet molestie. Phasellus in viverra massa, id pretium ante.
+                
+                Nullam a neque pellentesque augue rutrum iaculis sit amet at nibh. Suspendisse congue libero id lacus consectetur, quis ultricies risus tincidunt. Donec dui diam, varius et pharetra vel, sodales in nunc. Etiam luctus in odio eget pellentesque. Curabitur in dolor et sem posuere volutpat suscipit ac est. Aenean consequat ullamcorper arcu, ac finibus sapien pretium vel. Mauris ultricies cursus risus, eget hendrerit justo aliquet sit amet. Cras et orci condimentum, convallis nisl id, eleifend sem. Curabitur massa enim, tristique a auctor eu, laoreet ut tellus. Nullam sed tristique diam. Aliquam erat volutpat. Morbi condimentum finibus mollis. Sed finibus risus eget justo commodo venenatis viverra non magna.
+                
+                Morbi auctor nibh id odio hendrerit, malesuada porta augue congue. Aliquam vel elit sit amet nibh feugiat ultricies volutpat in purus. Proin scelerisque commodo sapien. Aenean faucibus eu lectus eu vestibulum. Pellentesque eros metus, porta quis sem et, fermentum tempus justo. Phasellus fringilla ligula a dolor lacinia fringilla. Donec blandit ligula rhoncus ex blandit, sit amet ultrices tortor aliquam. Nunc iaculis nisi quam. Ut porttitor enim augue, id suscipit sem ultricies a. Donec interdum consequat faucibus. Phasellus tincidunt, massa a pharetra iaculis, nisl velit sagittis nibh, vehicula ultrices justo urna ut quam. Duis fringilla, ligula at posuere fringilla, odio tortor imperdiet sapien, at tincidunt leo erat vel sapien.</div>
+            <div class="column3">
+                <div class="overlay3">Up</div>
+            </div>
+            <div class="footer"></div>
+        </div>
+    </body>
+</html>
