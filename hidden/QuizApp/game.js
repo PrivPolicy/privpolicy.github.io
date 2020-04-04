@@ -49,6 +49,7 @@ startGame = () => {
 
     game.classList.remove('hidden');
     loader.classList.add('hidden');
+    window.scrollTo(0,0);
 };
 
 getNewQuestion = () => {

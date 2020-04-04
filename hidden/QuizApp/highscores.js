@@ -6,3 +6,5 @@ highScoresList.innerHTML = (
         return `<li class="high-score">${score.name}-${score.score}</li>`
     }).join("")
 );
+
+window.scrollTo(0,0);
