@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="favicon-32.png"/>
+
+    <link rel="preload" href="./CSS/removeLinkStyle.css" as="style">
+    <link rel="preload" href="./CSS/var.css" as="style">
+    <link rel="preload" href="./CSS/main.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    
+    <link rel="stylesheet" href="./CSS/removeLinkStyle.css">
+    <link rel="stylesheet" href="./CSS/var.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <title>Twitch</title>
+</head>
+<body>
+    <div id="header">
+        <div id="nav">
+            <a id="twitch-icon" href="./"></a>
+            <a class="nav-item selected" href="./"><div class="nav-item-inner">Odkryj</div></a>
+            <a class="nav-item" href="https://twitch.tv/directory/following"><div class="nav-item-inner">Obserwowane</div></a>
+            <a class="nav-item" href="https://twitch.tv/directory"><div class="nav-item-inner">Przeglądaj</div></a>
+            <a class="nav-item" href="https://twitch.amazon.com"><div class="nav-item-inner">Wypróbuj Prime</div></a>
+            <div class="nav-item more" href="https://twitch.amazon.com"><div class="nav-item-inner">...</div></div>
+        </div>
+
+        <div id="search-bar-top">
+            <input type="search" placeholder="Wyszukaj">
+
+            <div>
+                <svg class="tw-icon__svg" width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <g>
+                        <path fill="var(--search-bar-top-button-off-svg-fill)" fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div id="user">
+            <div class="svg-container">
+                <svg class="tw-icon__svg" width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <g>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.798 10.456L10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z"></path>
+                    </g>
+                </svg>
+                <div class=uk-badge style="background-color: var(--notification-color)">1</div>
+            </div>
+
+            <div class="svg-container">
+                <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <g>
+                        <path fill-rule="evenodd" d="M17 14v-2c-1-.5-1.75-1-2-2-.095-.38-.154-.905-.221-1.506C14.49 5.936 14.049 2 10 2 5.95 2 5.509 5.936 5.221 8.494 5.154 9.095 5.095 9.62 5 10c-.25 1-1 1.5-2 2v2h14zm-9.002 2h4-4zm4 0v.012V16zm-5.766-4h7.536a4.262 4.262 0 01-.708-1.515c-.129-.513-.2-1.154-.26-1.684a32.48 32.48 0 00-.009-.083c-.152-1.355-.314-2.606-.78-3.535-.21-.423-.447-.692-.703-.862C11.063 4.158 10.673 4 10 4s-1.063.158-1.308.32c-.256.171-.492.44-.704.863-.465.929-.627 2.18-.78 3.535L7.2 8.8c-.06.53-.131 1.171-.26 1.684-.15.603-.402 1.1-.708 1.515zm1.766 4a2.001 2.001 0 004 .012" clip-rule="evenodd"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="svg-container">
+                <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <g>
+                        <path fill-rule="evenodd" d="M7.828 13L10 15.172 12.172 13H15V5H5v8h2.828zM10 18l-3-3H5a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2l-3 3z" clip-rule="evenodd"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="bitsy">
+                <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <g>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12l7-10 7 10-7 6-7-6zm2.678-.338L10 5.487l4.322 6.173-.85.728L10 11l-3.473 1.39-.849-.729z"></path>
+                    </g>
+                </svg>
+
+                Kup Bitsy
+            </div>
+
+            <div class="channel-photo live" style="background-image: url('./Media/Image/user-profile70.jpeg');">
+                <svg width="100%" height="100%" viewBox="0 0 10 10" x="0px" y="0px">
+                    <g>
+                        <circle cx="5" cy="5" r="4" stroke="black" stroke-width="2" fill="green" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div id="leftPanel">
+        <p>OBSERWOWANE KANAŁY</p>
+        <a class="obserwowany" href="https://www.twitch.tv/ngc4826">
+            <div class="channel-photo live" style="background-image: url('./Media/Image/ngc4826-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">NGC4826</div>
+                    <div class="channel-info-new">World of Tanks</div>
+                </div>
+
+                <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>8192</div>
+            </div>
+        </a>
+
+        <a class="obserwowany" href="https://www.twitch.tv/forhonorgame">
+            <div class="channel-photo" style="background-image: url('./Media/Image/forhonorgame-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">ForHonorGame</div>
+                    <div class="channel-info-new">2 nowe filmy</div>
+                </div>
+
+                <div class="channel-info-status">Offline</div>
+            </div>
+        </a>
+
+        <a class="obserwowany" href="https://www.twitch.tv/rtgamecrowd">
+            <div class="channel-photo" style="background-image: url('./Media/Image/rtgamecrowd-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">RTGameCrowd</div>
+                    <div class="channel-info-new">16 nowych filmów</div>
+                </div>
+
+                <div class="channel-info-status">Offline</div>
+            </div>
+        </a>
+
+        <a class="obserwowany" href="https://www.twitch.tv/rainbow6">
+            <div class="channel-photo" style="background-image: url('./Media/Image/rainbow6-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">Rainbow6</div>
+                    <div class="channel-info-new">16 nowych filmów</div>
+                </div>
+
+                <div class="channel-info-status">Offline</div>
+            </div>
+        </a>
+
+        <a class="obserwowany" href="https://www.twitch.tv/techland">
+            <div class="channel-photo" style="background-image: url('./Media/Image/techland-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">Techland</div>
+                    <div class="channel-info-new"></div>
+                </div>
+
+                <div class="channel-info-status">Offline</div>
+            </div>
+        </a>
+
+        <div>
+            <p>Pokaż więcej</p>
+        </div>
+        
+        <p>POLECANE KANAŁY</p>
+
+        <a class="obserwowany" href="https://www.twitch.tv/fextralife">
+            <div class="channel-photo live" style="background-image: url('./Media/Image/fextralife-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">fextralife</div>
+                    <div class="channel-info-new">Dark Souls III</div>
+                </div>
+
+                <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>4096</div>
+            </div>
+        </a>
+
+        <a class="obserwowany" href="https://www.twitch.tv/warframe">
+            <div class="channel-photo live" style="background-image: url('./Media/Image/warframe-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">Warframe</div>
+                    <div class="channel-info-new">Warframe</div>
+                </div>
+
+                <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>999</div>
+            </div>
+        </a>
+
+        <a class="obserwowany" href="https://www.twitch.tv/hypnotizd">
+            <div class="channel-photo live" style="background-image: url('./Media/Image/hypnotizd-profile70.png');"></div>
+            <div class="channel-info">
+                <div class=channel-info-desc>
+                    <div class="channel-info-name">hypnotizd</div>
+                    <div class="channel-info-new">Minecraft</div>
+                </div>
+
+                <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>2137</div>
+            </div>
+        </a>
+
+        <div>
+            <p>Pokaż więcej</p>
+        </div>
+
+        <div id="bottom-searchbar">
+            <input type="search" placeholder="Wyszukaj i dodaj znajomych">
+            <svg class="tw-icon__svg" width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                <g>
+                    <path fill="var(--leftPanel-search-bar-svg-fill)" fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div id="contentContainer"></div>
+</body>
+</html>

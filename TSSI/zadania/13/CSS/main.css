@@ -1,0 +1,391 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    color: white;
+    background-color: var(--purple-dark);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    position: relative;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--header-bg-color);
+}
+
+#nav {
+    float: left;
+    height: 100%;
+    color: var(--text-color);
+}
+
+#twitch-icon {
+    float: left;
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+
+.nav-item {
+    float: left;
+    display: block;
+    height: 50px;
+    padding: 0 20px;
+    line-height: 50px;
+    color: var(--text-color);
+    font-size: 19px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0px;
+}
+
+.nav-item:hover {
+    color: var(--text-color);
+}
+
+.nav-item-inner {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.nav-item-inner:hover {
+    color: var(--purple);
+}
+
+.nav-item.selected .nav-item-inner {
+    border-bottom: 2px solid var(--purple);
+    color: var(--purple)
+}
+
+.nav-item.more {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 40px;
+}
+
+#search-bar-top {
+    float: left;
+    height: 100%;
+    width: 100%;
+    max-width: 410px;
+    margin: 0 auto;
+    padding: 6px 20px;
+}
+
+#search-bar-top > input {
+    float: left;
+    background-color: var(--search-bar-top-bg);
+    border: none;
+    height: 36px;
+    width: calc(100% - 34px);
+    padding: 5px 10px;
+    border-radius: 6px 0 0 6px;
+    border: 2px solid transparent;
+    transition: background-color 0.15s, border 0.15s;
+    caret-color: var(--text-color);
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+#search-bar-top > input:focus {
+    outline: none;
+    background-color: black;
+    border: 2px solid var(--purple-dark);
+}
+
+#search-bar-top > input::placeholder {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--search-bar-top-placeholder);
+}
+
+#search-bar-top > div {
+    float: left;
+    width: 34px;
+    height: 36px;
+    padding: 0 5px;
+    border-radius: 0 6px 6px 0;
+    background-color: var(--search-bar-top-button-off);
+    cursor: not-allowed;
+}
+
+#search-bar-top > div.on {
+    background-color: var(--search-bar-top-button-on);
+    cursor: pointer;
+}
+
+#search-bar-top > div.on:hover {
+    background-color: var(--search-bar-top-button-on-hover);
+}
+
+#user {
+    float: right;
+    height: 100%;
+    padding: 10px 5px 10px 0;
+}
+
+#user > * {
+    margin: 0 5px;
+    float: left;
+    cursor: pointer;
+}
+
+#user > .svg-container {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    position: relative;
+}
+
+#user > .svg-container > svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--user-svg-fill);
+}
+
+#user > .svg-container > div {
+    left: 12px;
+    top:  0px;
+    position: absolute;
+    width: 18px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    border-radius: 7px;
+    font-weight: 700;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+
+    background-color: var(--notification-color);
+    font-size: 11px;
+}
+
+#user > .bitsy {
+    position: relative;
+    height: 100%;
+    width: 100px;
+    padding: 5px 10px 5px 8px;
+    text-align: right;
+    background-color: var(--user-bitsy-bg);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#user > .bitsy:hover {
+    background-color: var(--user-bitsy-bg-hover);
+}
+
+#user > .bitsy > svg {
+    position: absolute;
+    fill: var(--user-svg-fill);
+    width: 20px;
+    height: 20px;
+    left: 8px;
+}
+
+#user > .channel-photo.live {
+    position: relative;
+}
+
+#user > .channel-photo.live > svg {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: -1px;
+    right: -1px;
+}
+
+#leftPanel {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 240px;
+    height: calc(100% - 50px);
+    background-color: var(--leftPanel-bg-color);
+    padding: 14px 0;
+    overflow: hidden;
+}
+
+#leftPanel > p {
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.obserwowany {
+    display: block;
+    width: 100%;
+    height: 42px;
+    padding: 5px 10px;
+}
+
+.obserwowany:hover {
+    background-color: var(--leftPanel-bg-hover);
+}
+
+.channel-photo {
+    width: 30px;
+    height: 30px;
+    float: left;
+    border-radius: 21px;
+    background-size: contain;
+    filter: brightness(0.8) grayscale(100%);
+}
+
+.channel-photo.live {
+    filter: brightness(0.8);
+}
+
+.channel-info {
+    width: 180px;
+    height: 30px;
+    margin-left: 10px;
+    float: left;
+}
+
+.channel-info * {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0px;
+    color: var(--text-color);
+}
+
+.channel-info-desc {
+    height: 100%;
+    width: 135px;
+    float: left;
+}
+
+.channel-info-name {
+    width: 100%;
+    height: 16px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.channel-info-new {
+    width: 100%;
+    height: 14px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.channel-info-status {
+    height: 100%;
+    width: 40px;
+    margin-left: 5px;
+    float: left;
+    font-size: 12px;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: right;
+}
+
+#leftPanel > div:not(#bottom-searchbar) {
+    width: 100%;
+    height: 42px;
+    padding: 5px 0;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
+}
+
+#leftPanel > div > p {
+    color: var(--purple);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+#leftPanel > div > p:hover {
+    text-decoration: underline;
+}
+
+#bottom-searchbar {
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding: 10px;
+    border-top: 1px solid var(--light-gray);
+    z-index: 1000;
+    background-color: var(--leftPanel-bg-color);
+}
+
+#bottom-searchbar > input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 5px 10px 5px 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--text-input-bg);
+    transition: background-color 0.2s, border 0.2s;
+    color: white;
+    font-weight: 300;
+}
+
+#bottom-searchbar > input:focus {
+    background-color: black;
+    border: 2px solid var(--purple-dark);
+    outline: none;
+}
+
+#bottom-searchbar > input::placeholder{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #c6c6c6;
+    font-weight: 500;
+}
+
+#bottom-searchbar > svg{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 20px;
+    height: 20px;
+}
+
+#contentContainer {
+    position: absolute;
+    top: 50px;
+    left: 240px;
+    width: calc(100% - 240px);
+    height: calc(100% - 50px);
+}
+
+@media (max-width: 1200px) {
+    .channel-info, #leftPanel > div, #leftPanel > p  {
+        display: none;
+    }
+    
+    #leftPanel {
+        width: 50px;
+    }
+}

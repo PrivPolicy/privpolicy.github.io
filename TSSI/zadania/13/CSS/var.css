@@ -1,0 +1,29 @@
+:root {
+    --main-bg-color: #0E0E10;
+
+    --header-bg-color: #18181B;
+
+    --leftPanel-bg-color: #1F1F23;
+    --leftPanel-bg-hover: #26262C;
+    --leftPanel-search-bar-svg-fill: #adadb8;
+    
+    --light-gray: #363639;
+    --purple: #a970ff;
+    --purple-dark: #9147ff;
+    --text-color: #dedee3;
+    --text-input-bg: #404044;
+
+    --search-bar-top-bg: #3a3a3d;
+    --search-bar-top-placeholder: #adadad;
+    --search-bar-top-button-off: #29292C;
+    --search-bar-top-button-on: #3a3a3d;
+    --search-bar-top-button-on-hover: #464649;
+    --search-bar-top-button-off-svg-fill: #5a5a5c;
+    --search-bar-top-button-on-svg-fill: #efeff1;
+
+    --user-bitsy-bg: #3a3a3d;
+    --user-bitsy-bg-hover: #464649;
+    --user-svg-fill: #efeff1;
+
+    --notification-color: #e81916;
+}
