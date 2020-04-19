@@ -2,6 +2,8 @@
     --main-bg-color: #0E0E10;
     --main-carousel-arrow-hover-bg: #323234;
     --main-carousel-arrow-svg-fill: #efeff1;
+    --main-carousel-item-3-desc-bg: #18181b;
+    --main-recommender-channels-secondary-text: #a6a6b0;
 
     --header-bg-color: #18181B;
 
@@ -28,4 +30,10 @@
     --user-svg-fill: #efeff1;
 
     --notification-color: #e81916;
+
+    --category-bg: #3a3a3d;
+    --category-bg-hover: #464649;
+
+    --show-more-hr-color: #272728;
+    --show-more-button-color-hover: #323234;
 }
