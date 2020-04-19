@@ -22,7 +22,30 @@
 <body>
     <div id="header">
         <div id="nav">
-            <a id="twitch-icon" href="./"></a>
+            <a id="twitch-icon" href="./">
+                <svg overflow="visible" width="40px" height="40px" viewBox="0 0 40 40" x="0px" y="0px">
+                    <polygon id="twitch-logo-side" points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8">
+                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-side" fill="freeze" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
+                        <animate dur="150ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-side" fill="freeze" attributeName="points" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
+                    </polygon>
+                    
+                    <polygon id="twitch-logo-main" points="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25">
+                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-main" fill="freeze" attributeName="points" from="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" to="29 22 33 18 33 7 17 7 17 22 21 22 21 26 25 22"></animate>
+                        <animate dur="150ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-main" fill="freeze" attributeName="points" from="29 22 33 18 33 7 17 7 17 22 21 22 21 26 25 22" to="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25"></animate>
+                    </polygon>
+                    
+                    <path id="twitch-logo-eyes" d="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z">
+                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes" fill="freeze" attributeName="d" from="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z" to="M23,11 L25,11 L25,17 L23,17 L23,11 Z M30,11 L30,17 L28,17 L28,11 L30,11 Z"></animate>
+                        <animate dur="150ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes" fill="freeze" attributeName="d" from="M23,11 L25,11 L25,17 L23,17 L23,11 Z M30,11 L30,17 L28,17 L28,11 L30,11 Z" to="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z"></animate>
+                    </path>
+
+                    <polygon points="0 0 0 40 40 40 40 0" fill="transparent" id="twitch-logo-animation-trigger">
+                        <animate dur="1ms" begin="mouseenter" restart="whenNotActive" fill="freeze" href="#twitch-logo-animation-trigger" id="twitch-logo-animation-start"></animate>
+                        <animate dur="1ms" begin="mouseleave" restart="whenNotActive" fill="freeze" href="#twitch-logo-animation-trigger" id="twitch-logo-animation-end"></animate>
+                    </polygon>
+                </svg>
+            </a>
+
             <a class="nav-item selected" href="./"><div class="nav-item-inner">Odkryj</div></a>
             <a class="nav-item" href="https://twitch.tv/directory/following"><div class="nav-item-inner">Obserwowane</div></a>
             <a class="nav-item" href="https://twitch.tv/directory"><div class="nav-item-inner">Przeglądaj</div></a>
@@ -31,12 +54,12 @@
         </div>
 
         <div id="search-bar-top">
-            <input type="search" placeholder="Wyszukaj">
+            <input id=search-bar-top-input type="search" placeholder="Wyszukaj" oninput="searchBarTopCheckIfNotEmpty()">
 
-            <div>
-                <svg class="tw-icon__svg" width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+            <div id=search-bar-top-button>
+                <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
                     <g>
-                        <path fill="var(--search-bar-top-button-off-svg-fill)" fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path>
+                        <path fill-rule="evenodd" d="M13.192 14.606a7 7 0 111.414-1.414l3.101 3.1-1.414 1.415-3.1-3.1zM14 9A5 5 0 114 9a5 5 0 0110 0z" clip-rule="evenodd"></path>
                     </g>
                 </svg>
             </div>
@@ -206,6 +229,39 @@
         </div>
     </div>
 
-    <div id="contentContainer"></div>
+    <div id="contentContainer">
+        <div id="carousel">
+            <img class="carousel-item-1 carousel-hover-scale" src="./Media/Image/carousel-item-1.png"></img>
+            <img class="carousel-item-2 carousel-hover-scale" src="./Media/Image/carousel-item-2.png"></img>
+
+            <div class="carousel-item-3">
+                <video id="carousel-item-3-video" preload="auto" src="./Media/Video/carousel-casual-stream.mp4" controls></video>
+                <div id="carousel-item-3-desc">
+
+                </div>
+            </div>
+
+            <img class="carousel-item-4 carousel-hover-scale" src="./Media/Image/carousel-item-4.png"></img>
+            <img class="carousel-item-5 carousel-hover-scale" src="./Media/Image/carousel-item-5.png"></img>
+
+            <div class="carousel-arrow left">
+                <svg class="tw-icon__svg" width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <g>
+                        <path d="M13.5 14.5L9 10l4.5-4.5L12 4l-6 6 6 6 1.5-1.5z"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="carousel-arrow right">
+                <svg class="tw-icon__svg" width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <g>
+                        <path d="M6.5 5.5L11 10l-4.5 4.5L8 16l6-6-6-6-1.5 1.5z"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
 </body>
 </html>

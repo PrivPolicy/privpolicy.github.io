@@ -1,5 +1,7 @@
 :root {
     --main-bg-color: #0E0E10;
+    --main-carousel-arrow-hover-bg: #323234;
+    --main-carousel-arrow-svg-fill: #efeff1;
 
     --header-bg-color: #18181B;
 
