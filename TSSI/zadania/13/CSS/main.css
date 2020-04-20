@@ -580,6 +580,7 @@ body {
     top: 158px;
     border-radius: 5px;
     background-color: var(--main-bg-color);
+    cursor: pointer;
 }
 
 #contentContainer > #carousel > .carousel-arrow:hover {
@@ -614,10 +615,23 @@ body {
     float: left;
     width: calc((100% - 50px) / 5);
     margin-right: 10px;
+    position: relative;
 }
 
 #contentContainer > #recomended-channels > .channel-container > img {
     width: 100%;
+}
+
+#contentContainer > #recomended-channels > .channel-container > .on-air-indicator {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 75px;
+    height: 20px;
+    background-image: url('../Media/Image/onAir.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #contentContainer > #recomended-channels > .channel-container > .image-container {
@@ -732,7 +746,7 @@ body {
 
 #recommended-categories {
     width: 100%;
-    padding: 0 30px;
+    padding: 0 30px 0 20px;
     /* background-color: red; */
 }
 
@@ -740,6 +754,7 @@ body {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 15px;
+    margin-left: 10px;
     color: var(--text-color);
 }
 
