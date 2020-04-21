@@ -108,8 +108,7 @@ body {
 #search-bar-top {
     float: left;
     height: 100%;
-    width: 100%;
-    max-width: 410px;
+    width: 400px;
     margin: 0 auto;
     padding: 6px 20px;
 }
@@ -747,7 +746,6 @@ body {
 #recommended-categories {
     width: 100%;
     padding: 0 30px 0 20px;
-    /* background-color: red; */
 }
 
 #recommended-categories > #recommended-categories-text {
@@ -813,6 +811,64 @@ body {
     height: 25px;
 }
 
+#recommended-music {
+    width: 100%;
+    padding: 0 30px 0 20px;
+}
+
+#recommended-music > #recommended-music-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    color: var(--text-color);
+}
+
+#recommended-music > .recommended-music-container {
+    float: left;
+    width: calc((100% - 50px) / 5);
+    margin-right: 10px;
+}
+
+#recommended-music > .recommended-music-container > img {
+    width: 100%;
+}
+
+#recommended-music > .recommended-music-container > .recommended-music-name {
+    display: block;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+#recommended-music > .recommended-music-container > .recommended-music-author {
+    display: block;
+    font-size: 13px;
+    color: var(--main-recommender-channels-secondary-text);
+    margin: 3px 0;
+}
+
+#recommended-music > .recommended-music-container > .recommended-music-game {
+    display: block;
+    font-size: 13px;
+    color: var(--main-recommender-channels-secondary-text);
+}
+
+#recommended-music > .recommended-music-container > a:hover {
+    color: var(--purple);
+    cursor: pointer;
+}
+
+#recommended-music > .recommended-music-container > audio {
+    height: 25px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#recommended-music > .recommended-music-container > audio:focus {
+    outline: none;
+}
+
 @media (max-width: 1900px) {
     .clear1900 {
         display: none;
@@ -828,8 +884,7 @@ body {
         display: none;
     }
 
-    #contentContainer > #recomended-channels > .channel-container {
-        float: left;
+    #contentContainer > #recomended-channels > .channel-container, #recommended-music > .recommended-music-container {
         width: calc((100% - 40px) / 4);
     }
 }
@@ -869,7 +924,7 @@ body {
         display: none;
     }
 
-    #contentContainer > #recomended-channels > .channel-container {
+    #contentContainer > #recomended-channels > .channel-container, #recommended-music > .recommended-music-container {
         float: left;
         width: calc((100% - 30px) / 3);
     }
@@ -905,7 +960,7 @@ body {
         display: none;
     }
 
-    #contentContainer > #recomended-channels > .channel-container {
+    #contentContainer > #recomended-channels > .channel-container, #recommended-music > .recommended-music-container {
         float: left;
         width: calc((100% - 20px) / 2);
     }
@@ -936,7 +991,7 @@ body {
         display: none;
     }
 
-    #contentContainer > #recomended-channels > .channel-container {
+    #contentContainer > #recomended-channels > .channel-container, #recommended-music > .recommended-music-container {
         float: left;
         width: calc(100% - 10px);
     }
