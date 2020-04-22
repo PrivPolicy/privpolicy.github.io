@@ -52,7 +52,7 @@
             <a class="nav-item" href="https://twitch.tv/directory/following"><div class="nav-item-inner">Obserwowane</div></a>
             <a class="nav-item" href="https://twitch.tv/directory"><div class="nav-item-inner">Przeglądaj</div></a>
             <a class="nav-item" href="https://twitch.amazon.com"><div class="nav-item-inner">Wypróbuj Prime</div></a>
-            <div class="nav-item more" href="https://twitch.amazon.com"><div class="nav-item-inner">...</div></div>
+            <div class="nav-item more" href="https://twitch.amazon.com"><div class="nav-item-inner special tooltip-container">...<span class="tooltip-text">Więcej</span></div></div>
         </div>
 
         <div id="search-bar-top">
@@ -68,29 +68,32 @@
         </div>
 
         <div id="user">
-            <div class="svg-container">
+            <div class="svg-container tooltip-container">
                 <svg class="tw-icon__svg" width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
                     <g>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M13.798 10.456L10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z"></path>
                     </g>
                 </svg>
-                <div class=uk-badge style="background-color: var(--notification-color)">1</div>
+                <div style="background-color: var(--notification-color)">1</div>
+                <span class="tooltip-text">Nowe łupy Prime</span>
             </div>
 
-            <div class="svg-container">
+            <div class="svg-container tooltip-container">
                 <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
                     <g>
                         <path fill-rule="evenodd" d="M17 14v-2c-1-.5-1.75-1-2-2-.095-.38-.154-.905-.221-1.506C14.49 5.936 14.049 2 10 2 5.95 2 5.509 5.936 5.221 8.494 5.154 9.095 5.095 9.62 5 10c-.25 1-1 1.5-2 2v2h14zm-9.002 2h4-4zm4 0v.012V16zm-5.766-4h7.536a4.262 4.262 0 01-.708-1.515c-.129-.513-.2-1.154-.26-1.684a32.48 32.48 0 00-.009-.083c-.152-1.355-.314-2.606-.78-3.535-.21-.423-.447-.692-.703-.862C11.063 4.158 10.673 4 10 4s-1.063.158-1.308.32c-.256.171-.492.44-.704.863-.465.929-.627 2.18-.78 3.535L7.2 8.8c-.06.53-.131 1.171-.26 1.684-.15.603-.402 1.1-.708 1.515zm1.766 4a2.001 2.001 0 004 .012" clip-rule="evenodd"></path>
                     </g>
                 </svg>
+                <span class="tooltip-text">Powiadomienia</span>
             </div>
 
-            <div class="svg-container">
+            <div class="svg-container tooltip-container">
                 <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
                     <g>
                         <path fill-rule="evenodd" d="M7.828 13L10 15.172 12.172 13H15V5H5v8h2.828zM10 18l-3-3H5a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2l-3 3z" clip-rule="evenodd"></path>
                     </g>
                 </svg>
+                <span class="tooltip-text">Szepty</span>
             </div>
 
             <div class="bitsy">
@@ -115,7 +118,7 @@
 
     <div id="leftPanel">
         <p>OBSERWOWANE KANAŁY</p>
-        <a class="obserwowany" href="https://www.twitch.tv/ngc4826">
+        <a class="obserwowany tooltip-channel-container" href="https://www.twitch.tv/ngc4826">
             <div class="channel-photo live" style="background-image: url('./Media/Image/ngc4826-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -125,6 +128,7 @@
 
                 <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>8192</div>
             </div>
+            <span class="tooltip-channel"></span>
         </a>
 
         <a class="obserwowany" href="https://www.twitch.tv/forhonorgame">
@@ -544,6 +548,20 @@
                 <a class="recommended-music-game ellipsis-overflow">Minecraft</a>
                 <audio class="recommended-music-player" src="./Media/Audio/recommended-music-5.mp3" loop controls></audio>
             </div>
+        </div>
+
+        <div class="clear-float"></div>
+
+        <div class="show-more-hr-container">
+            <hr class="show-more-hr"></hr>
+            <div class="show-more-button">
+                Pokaż więcej
+
+                <svg class="show-more-arrow" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <path d="M14.5 6.5L10 11 5.5 6.5 4 8l6 6 6-6-1.5-1.5z"></path>
+                </svg>
+            </div>
+            <hr class="show-more-hr"></hr>
         </div>
     </div>
 
