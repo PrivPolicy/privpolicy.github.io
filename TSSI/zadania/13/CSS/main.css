@@ -374,7 +374,7 @@ body {
     height: calc(100% - 50px);
     background-color: var(--leftPanel-bg-color);
     padding: 14px 0;
-    overflow-y: hidden;
+    overflow: hidden;
     z-index: 50;
 }
 
