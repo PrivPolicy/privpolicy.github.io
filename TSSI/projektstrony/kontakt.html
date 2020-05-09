@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/33a150093d.js" crossorigin="anonymous"></script>
+
+        <!-- 960 GRID -->
+        <link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="./css/960_12_col.css" />
+
+        <link rel="stylesheet" href="./css/kontakt.css">
+
+        <title>Kontakt</title>
+    </head>
+
+    <body>
+         <!-- <img id="grid_col" src="./img/12_col.png" alt="GRID"> --> <!-- Zgadza się z GRIDem -->
+
+        <div id="container" class="container_12">
+            <div class="spacer_20"></div>
+
+            <div id="header" class="grid_12">
+                <div id="logo" class="grid_4 prefix_4">
+                    <a href="./"><img src=".//img/logo.png" alt="LOGO"></a>
+                </div>
+
+                <div class="spacer_20"></div>
+
+                <div id="navbar" class="grid_12 alpha omega">
+                    <div class="grid_1 alpha space_waster"></div>
+                    <a href="./"><div class="grid_2 navbar_item">cennik</div></a>
+                    <a href="./"><div class="grid_2 navbar_item">galeria</div></a>
+                    <a href="./"><div class="grid_2 navbar_item">rezerwacja</div></a>
+                    <a href="./"><div class="grid_2 navbar_item">o nas</div></a>
+                    <a href="./kontakt.html"><div class="grid_2 navbar_item active">kontakt</div></a>
+                    <div class="grid_1 omega space_waster"></div>
+                </div>
+            </div>
+
+            <div class="spacer_40"></div>
+
+            <div id="form" class="grid_12">
+                <div id="form_title" class="grid_12 alpha omega">Napisz do nas!</div>
+
+                <div class="spacer_20"></div>
+
+                <form action="./" method="GET" autocomplete="off">
+                    <div class="grid_1 alpha space_waster"></div>
+
+                    <div id="form_left" class="grid_5">
+                        <input type="text" name="name" id="input_name" placeholder="Imię">
+                        <div class="spacer_20"></div>
+                        <input type="text" name="surname" id="input_surname" placeholder="Nazwisko">
+                        <div class="spacer_20"></div>
+                        <input type="email" name="email" id="input_email" placeholder="Adres email">
+                    </div>
+
+                    <div id="form_right" class="grid_5">
+                        <textarea name="message" id="form_message" placeholder="Treść wiadomości..."></textarea>
+                    </div>
+
+                    <div class="grid_1 omega space_waster"></div>
+
+                    <div class="spacer_20"></div>
+
+                    <div class="grid_12 alpha omega">
+                        <button type="submit" id="form_submit">Wyślij</button>
+                    </div>
+                </form>
+
+                <div class="spacer_20"></div>
+            </div>
+
+            <div class="spacer_40"></div>
+
+            <div id="footer_big" class="grid_12">
+                <div class="grid_1 alpha space_waster"></div>
+
+                <div class="grid_6">
+                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Monte%20Cassino%2016&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+
+                <div id="info" class="grid_4">
+                    <span>
+                        ul. Monte Cassino 16 <br>
+                        30-337 Kraków <br>
+                        <br>
+                        Godziny otwarcia: <br>
+                        Pn: 10 - 18 <br>
+                        Wt: 10 - 18 <br>
+                        Śr: 12 - 18 <br>
+                        Cw: 10 - 16 <br>
+                        Pt: 10 - 16 <br>
+                        <br>
+                        Tel. 697 695 693 <br>
+                        Email: kontakt@salnails.com
+                    </span>
+                </div>
+
+                <div class="grid_1 omega space_waster"></div>
+            </div>
+
+            <div class="spacer_40"></div>
+
+            <div id="footer" class="grid_12">
+                2020 &copy; Salamandra Nails
+            </div>
+
+            <div class="spacer_20"></div>
+        </div>
+    </body>
+</html>
