@@ -315,6 +315,8 @@ body, html {
 }
 #container #chat-window #chat-box #chat-messages .message-box {
   width: 100%;
+  margin-bottom: 16px;
+  padding: 6px 0;
 }
 #container #chat-window #chat-box #chat-messages .message-box .photo {
   width: 72px;
@@ -332,6 +334,8 @@ body, html {
 #container #chat-window #chat-box #chat-messages .message-box .message {
   width: calc(100% - 72px);
   height: 100%;
+  word-break: break-all;
+  word-wrap: break-word;
   float: left;
 }
 #container #chat-window #chat-box #chat-messages .message-box .message::after {
@@ -361,6 +365,9 @@ body, html {
 #container #chat-window #chat-box #chat-messages .message-box .message .user-info span:nth-child(1)[data-rank=teacher] {
   color: #dd6509;
 }
+#container #chat-window #chat-box #chat-messages .message-box .message .user-info span:nth-child(1)[data-rank=michal] {
+  color: #5959D9;
+}
 #container #chat-window #chat-box #chat-messages .message-box .message .user-info span:nth-child(1)[data-rank=student] {
   color: #2ecc71;
 }
@@ -373,14 +380,122 @@ body, html {
   height: calc(100% - 16px);
   color: #d2d8cf;
 }
+#container #chat-window #chat-box #chat-messages .message-box .message .message-content img {
+  cursor: pointer;
+  width: 400px;
+  border-radius: 6px;
+}
+#container #chat-window #chat-box #chat-messages .message-box .message .message-content a:link {
+  color: #18b0f4;
+}
+#container #chat-window #chat-box #chat-messages .message-box .message .message-content a:visited {
+  color: #18b0f4;
+}
+#container #chat-window #chat-box #chat-messages .message-box .message .message-content a:hover {
+  color: #7ac5e7;
+}
+#container #chat-window #chat-box #chat-messages .message-box .message .message-content a:active {
+  color: #18b0f4;
+}
 #container #chat-window #chat-box #chat-messages .message-box:hover {
   background-color: #32353b;
   border-radius: 0 10px 10px 0;
 }
+#container #chat-window #chat-box #chat-messages .message-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+#container #chat-window #chat-box #chat-messages .message-separator div {
+  display: inline-block;
+  height: 1px;
+  width: calc((100% - 100px) / 2);
+  background-color: #8e9297;
+}
+#container #chat-window #chat-box #chat-messages .message-separator span {
+  display: inline-block;
+  width: 100px;
+  height: 16px;
+  font-size: 12px;
+  color: #8e9297;
+  text-align: center;
+}
 #container #chat-window #chat-box #chat-input {
   height: 70px;
   width: 100%;
-  background-color: green;
+  padding: 0 25px 25px 15px;
+  overflow: hidden;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #40444b;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container > *:not(#chat-input-field) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container > *:not(#chat-input-field) svg {
+  width: 24px;
+  height: 24px;
+  fill: #8e9297;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container > *:not(#chat-input-field):hover svg {
+  fill: #dcddd4;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-attach {
+  width: 57px;
+  height: 100%;
+  float: left;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-field {
+  width: calc(100% - 177px);
+  height: 100%;
+  padding: 5px 20px;
+  float: left;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-field input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: white;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-field input:focus {
+  border: none;
+  outline: none;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-field input::placeholder {
+  font-size: 14px;
+  color: #8e9297;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-gift {
+  width: 40px;
+  height: 100%;
+  float: left;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-gif {
+  width: 40px;
+  height: 100%;
+  float: left;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-emoji {
+  width: 40px;
+  height: 100%;
+  float: left;
+}
+#container #chat-window #chat-box #chat-input #chat-input-container #chat-input-emoji svg {
+  width: 32px;
+  height: 32px;
 }
 #container #chat-window #active-users {
   width: 240px;
@@ -461,6 +576,9 @@ body, html {
 }
 #container #chat-window #active-users .user-section .users .user[data-rank=teacher] .info .name {
   color: #dd6509;
+}
+#container #chat-window #active-users .user-section .users .user[data-rank=michal] .info .name {
+  color: #5959D9;
 }
 #container #chat-window #active-users .user-section .users .user[data-rank=student] .info .name {
   color: #2ecc71;

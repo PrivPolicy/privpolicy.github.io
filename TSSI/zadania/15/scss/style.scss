@@ -30,6 +30,8 @@ $colors: (
 
     "chat-window-bg": rgb(54, 57, 63),
     "chat-header-bg": rgb(54, 57, 63),
+    "chat-input-bg": rgb(54, 57, 63),
+    "chat-input-container-bg": rgb(64,68,75),
 
     "message-box-bg": rgb(54, 57, 63),
     "message-box-bg-hover": rgb(50,53,59),
@@ -37,14 +39,20 @@ $colors: (
     "chat-message-text-color": rgb(210,216,207),
 
     "active-users-bg": rgb(47, 49, 54),
-    "active-users-bg-hover": rgb(52,55,60)
+    "active-users-bg-hover": rgb(52,55,60),
+
+    "a-link-color": rgb(24,176,244),
+    "a-visited-color": rgb(24,176,244),
+    "a-hover-color": rgb(122, 197, 231),
+    "a-active-color": rgb(24,176,244)
 );
 
 $ranks: (
     "admin": rgb(221,42,61),
     "bot": rgb(36,110,47),
     "teacher": rgb(221,101,9),
-    "student": rgb(46,204,113),
+    "michal": #5959D9,
+    "student": rgb(46,204,113)
 );
 
 $channel-icons: (
@@ -455,6 +463,8 @@ body, html {
 
                 .message-box {
                     width: 100%;
+                    margin-bottom: 16px;
+                    padding: 6px 0;
 
                     .photo {
                         width: 72px;
@@ -474,6 +484,8 @@ body, html {
                     .message {
                         width: calc(100% - 72px);
                         height: 100%;
+                        word-break: break-all;
+                        word-wrap: break-word;
                         @include float-left();
                         @include clear-fix();
 
@@ -509,6 +521,28 @@ body, html {
                             width: 100%;
                             height: calc(100% - 16px);
                             color: map-get($map: $colors, $key: chat-message-text-color);
+
+                            img {
+                                cursor: pointer;
+                                width: 400px;
+                                border-radius: 6px;
+                            }
+
+                            a:link {
+                                color: map-get($map: $colors, $key: a-link-color);
+                            }
+
+                            a:visited {
+                                color: map-get($map: $colors, $key: a-visited-color);
+                            }
+
+                            a:hover {
+                                color: map-get($map: $colors, $key: a-hover-color);
+                            }
+
+                            a:active {
+                                color: map-get($map: $colors, $key: a-active-color);
+                            }
                         }
                     }
                 }
@@ -517,12 +551,124 @@ body, html {
                     background-color: map-get($map: $colors, $key: message-box-bg-hover);
                     border-radius: 0 10px 10px 0;
                 }
+
+                .message-separator {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 16px;
+                    width: 100%;
+                    margin-bottom: 16px;
+                    padding-left: 20px;
+
+
+                    div {
+                        display: inline-block;
+                        height: 1px;
+                        width: calc((100% - 100px) / 2);
+                        background-color: map-get($map: $colors, $key: channel-text-inactive);
+                    }
+
+                    span {
+                        display: inline-block;
+                        width: 100px;
+                        height: 16px;
+                        font-size: 12px;
+                        color: map-get($map: $colors, $key: channel-text-inactive);
+                        text-align: center;
+                    }
+                }
             }
 
             #chat-input {
                 height: 70px;
                 width: 100%;
-                background-color: green;
+                padding: 0 25px 25px 15px;
+                overflow: hidden;
+
+                #chat-input-container {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    background-color: map-get($map: $colors, $key: chat-input-container-bg);
+
+                    & > *:not(#chat-input-field) {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                            fill: map-get($map: $colors, $key: channel-text-inactive);
+                        }
+                    }
+
+                    & > *:not(#chat-input-field):hover {
+                        svg {
+                            fill: map-get($map: $colors, $key: channel-text-hover);
+                        }
+                    }
+
+                    #chat-input-attach {
+                        width: 57px;
+                        height: 100%;
+                        @include float-left();
+                    }
+
+                    #chat-input-field {
+                        $other: 57px + 40px + 40px + 40px;
+
+                        width: calc(100% - #{$other});
+                        height: 100%;
+                        padding: 5px 20px;
+                        @include float-left();
+
+                        input {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            background-color: transparent;
+                            font-size: 16px;
+                            color: map-get($map: $colors, $key: channel-text-active);
+
+                            &:focus {
+                                border: none;
+                                outline: none;
+                            }
+
+                            &::placeholder {
+                                font-size: 14px;
+                                color: map-get($map: $colors, $key: channel-text-inactive);
+                            }
+                        }
+                    }
+
+                    #chat-input-gift {
+                        width: 40px;
+                        height: 100%;
+                        @include float-left();
+                    }
+
+                    #chat-input-gif {
+                        width: 40px;
+                        height: 100%;
+                        @include float-left();
+                    }
+
+                    #chat-input-emoji {
+                        width: 40px;
+                        height: 100%;
+                        @include float-left();
+
+                        svg {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                }
             }
         }
 
