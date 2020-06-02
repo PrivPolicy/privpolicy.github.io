@@ -1,5 +1,6 @@
 const currentDate = document.getElementById("current-date");
 const channels = document.querySelectorAll("#channel-content .channel");
+const headerIcon = document.querySelector("#header-name .channel-icon");
 
 months = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]
 
@@ -27,3 +28,5 @@ channels.forEach(element => {
 
     element.children[0].children[0].children[0].setAttribute("d", channelTypes[data]);
 });
+
+headerIcon.children[0].setAttribute("d", channelTypes[headerIcon.dataset["type"]]);
