@@ -9,29 +9,29 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2f3136;
+  background: #202225;
   border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2f3136;
+  background: #202225;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #2f3136;
+  background: #202225;
 }
 
 ::-webkit-scrollbar-track {
-  background: #202225;
+  background: #2f3136;
   border-radius: 50px;
 }
 
 ::-webkit-scrollbar-track:hover {
-  background: #202225;
+  background: #2f3136;
 }
 
 ::-webkit-scrollbar-track:active {
-  background: #202225;
+  background: #2f3136;
 }
 
 ::-webkit-scrollbar-corner {
@@ -242,6 +242,59 @@ body, html {
 #container #channel-list #channel-content .channel-section-container .channel.active:hover {
   background-color: #393c43;
 }
+#container #channel-list #channel-content .channel-section-container .channel-members {
+  width: 100%;
+  padding-left: 26px;
+  margin-bottom: 16px;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 2px 0 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member div {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  position: relative;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member div img {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member div::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 14px;
+  border: 3px solid #43b481;
+  background-color: transparent;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  visibility: hidden;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member span {
+  color: #8e9297;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member.speaking div::after {
+  visibility: visible;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member.speaking span {
+  color: white;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member:hover {
+  background-color: #393c43;
+}
+#container #channel-list #channel-content .channel-section-container .channel-members .member:hover span {
+  color: #dcddd4;
+  filter: brightness(0.9);
+}
 #container #chat-window {
   background-color: #36393f;
   width: calc(100% - (70px + 240px));
@@ -253,13 +306,14 @@ body, html {
   height: 50px;
   background-color: inherit;
   position: relative;
-  overflow: hidden;
+  overflow-y: visible;
+  cursor: default;
 }
 #container #chat-window #chat-header #header-name {
   width: 130px;
-  height: 50px;
+  height: 49px;
   position: absolute;
-  left: 0;
+  left: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -277,13 +331,13 @@ body, html {
   font-weight: 700;
 }
 #container #chat-window #chat-header #header-icons {
-  height: 50px;
+  height: 49px;
   width: 350px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   position: absolute;
-  right: 0;
+  right: 10px;
   background-color: inherit;
 }
 #container #chat-window #chat-header #header-icons svg {
@@ -291,6 +345,7 @@ body, html {
   height: 24px;
   viewBox: 0 0 24px 24px;
   fill: #8e9297;
+  cursor: pointer;
 }
 #container #chat-window #chat-header #header-icons svg.active {
   fill: white;
@@ -617,6 +672,81 @@ body, html {
 }
 #container #chat-window #active-users .user-section .users .user[data-rank=student] .info .name {
   color: #2ecc71;
+}
+#container .tooltip-container {
+  position: relative;
+}
+#container .tooltip-container .tooltip-right {
+  display: none;
+  position: absolute;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  left: calc(100% + 24px);
+  z-index: 10000;
+  white-space: nowrap;
+}
+#container .tooltip-container .tooltip-right span:not(:last-child) {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#container .tooltip-container .tooltip-right svg {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+}
+#container .tooltip-container .tooltip-right img {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 12px !important;
+  border: 2px sollid black;
+}
+#container .tooltip-container .tooltip-right::after {
+  content: "";
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  position: absolute;
+  left: -12px;
+  top: calc(50% - 6px);
+  z-index: 10001;
+}
+#container .tooltip-container .tooltip-down {
+  display: none;
+  position: absolute;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  font-size: 12px;
+  white-space: nowrap;
+}
+#container .tooltip-container .tooltip-down.limit {
+  width: 180px;
+  white-space: normal;
+}
+#container .tooltip-container .tooltip-down::after {
+  content: "";
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+  position: absolute;
+  left: calc(50% - 6px);
+  top: -12px;
+  z-index: 10001;
+}
+#container .tooltip-container:hover .tooltip-right {
+  display: block;
+}
+#container .tooltip-container:hover .tooltip-down {
+  display: block;
+  position: absolute;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
-$track: #202225;
-$thumb: #2f3136;
+$thumb: #202225;
+$track: #2f3136;
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -35,5 +35,5 @@ $thumb: #2f3136;
 
 :root * {
     scrollbar-width: thin;
-    scrollbar-color: $track $thumb;
+    scrollbar-color: $thumb $track;
 }

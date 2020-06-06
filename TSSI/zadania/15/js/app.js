@@ -1,6 +1,8 @@
 const currentDate = document.getElementById("current-date");
 const channels = document.querySelectorAll("#channel-content .channel");
 const headerIcon = document.querySelector("#header-name .channel-icon");
+const serverContainers = document.querySelector(".server-container");
+const serverMembersIcon = document.querySelectorAll(".tooltip-container .channel-icon");
 
 months = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]
 
@@ -30,3 +32,9 @@ channels.forEach(element => {
 });
 
 headerIcon.children[0].setAttribute("d", channelTypes[headerIcon.dataset["type"]]);
+
+serverMembersIcon.forEach(element => {
+    var data = element.dataset["type"];
+
+    element.children[0].setAttribute("d", channelTypes[data]);
+});
