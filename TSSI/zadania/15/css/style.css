@@ -228,12 +228,41 @@ body, html {
 #container #channel-list #channel-content .channel-section-container .channel svg.invite:hover {
   fill: #d2d3d4;
 }
+#container #channel-list #channel-content .channel-section-container .channel.max-users {
+  position: relative;
+}
+#container #channel-list #channel-content .channel-section-container .channel.max-users .max-users {
+  width: 48px;
+  height: 20px;
+  border-radius: 10px;
+  background-image: url("../img/util/maxusers.png");
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  right: 10px;
+  z-index: 100000;
+}
+#container #channel-list #channel-content .channel-section-container .channel.max-users .max-users span {
+  font-size: 13px;
+  position: absolute;
+}
+#container #channel-list #channel-content .channel-section-container .channel.max-users .max-users span.active {
+  left: 5px;
+  top: 2px;
+}
+#container #channel-list #channel-content .channel-section-container .channel.max-users .max-users span.max {
+  right: 5px;
+  top: 2px;
+}
 #container #channel-list #channel-content .channel-section-container .channel:hover {
   background-color: #393c43;
   color: #dcddd4;
 }
 #container #channel-list #channel-content .channel-section-container .channel:hover svg.invite {
   display: block;
+}
+#container #channel-list #channel-content .channel-section-container .channel:hover .max-users {
+  display: none;
 }
 #container #channel-list #channel-content .channel-section-container .channel.active {
   font-weight: 700;

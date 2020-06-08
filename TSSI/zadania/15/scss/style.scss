@@ -293,12 +293,47 @@ body, html {
                     }
                 }
 
+                .channel.max-users {
+                    position: relative;
+
+                    .max-users {
+                        width: 48px;
+                        height: 20px;
+                        border-radius: 10px;
+                        background-image: url("../img/util/maxusers.png");
+                        background-position: center;
+                        background-size: contain;
+                        position: absolute;
+                        right: 10px;
+                        z-index: 100000;
+
+                        span {
+                            font-size: 13px;
+                            position: absolute;
+                        }
+
+                        span.active {
+                            left: 5px;
+                            top: 2px;
+                        }
+
+                        span.max {
+                            right: 5px;
+                            top: 2px;
+                        }
+                    }
+                }
+
                 .channel:hover {
                     background-color: map-get($map: $colors, $key: channel-default-bg-hover);
                     color: map-get($map: $colors, $key: channel-text-hover);
 
                     svg.invite {
                         display: block;
+                    }
+
+                    .max-users {
+                        display: none;
                     }
                 }
 

@@ -27,19 +27,38 @@
             <a id="twitch-icon" href="./">
                 <svg overflow="visible" width="40px" height="40px" viewBox="0 0 40 40" x="0px" y="0px">
                     <polygon id="twitch-logo-side" points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8">
-                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-side" fill="freeze" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
-                        <animate dur="150ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-side" fill="freeze" attributeName="points" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
+                        <animate dur="150ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-side" fill="freeze" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
+                        <animate dur="250ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-side" fill="freeze" attributeName="points" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
                     </polygon>
                     
                     <polygon id="twitch-logo-main" points="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25">
-                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-main" fill="freeze" attributeName="points" from="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" to="29 22 33 18 33 7 17 7 17 22 21 22 21 26 25 22"></animate>
-                        <animate dur="150ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-main" fill="freeze" attributeName="points" from="29 22 33 18 33 7 17 7 17 22 21 22 21 26 25 22" to="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25"></animate>
+                        <animate dur="150ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-main" fill="freeze" attributeName="points" from="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" to="29 22 33 18 33 7 17 7 17 22 21 22 21 26 25 22"></animate>
+                        <animate dur="250ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-main" fill="freeze" attributeName="points" from="29 22 33 18 33 7 17 7 17 22 21 22 21 26 25 22" to="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25"></animate>
                     </polygon>
                     
-                    <path id="twitch-logo-eyes" d="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z">
-                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes" fill="freeze" attributeName="d" from="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z" to="M23,11 L25,11 L25,17 L23,17 L23,11 Z M30,11 L30,17 L28,17 L28,11 L30,11 Z"></animate>
-                        <animate dur="150ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes" fill="freeze" attributeName="d" from="M23,11 L25,11 L25,17 L23,17 L23,11 Z M30,11 L30,17 L28,17 L28,11 L30,11 Z" to="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z"></animate>
-                    </path>
+                    <rect id="twitch-logo-eyes1" x="20" y="14" height="6" width="2" style="fill: #9147ff">
+                        <animate dur="150ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes1" fill="freeze" attributeName="x" from="20" to="23"></animate>
+                        <animate dur="150ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes1" fill="freeze" attributeName="y" from="14" to="11"></animate>
+                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes1" id="twitch-eyes-stage-1" fill="freeze" attributeName="height" from="6" to="2"></animate>
+                        <animate dur="75ms" begin="twitch-eyes-stage-1.end + 0ms" href="#twitch-logo-eyes1" id="twitch-eyes-stage-2" fill="freeze" attributeName="height" from="2" to="6"></animate>
+                        <animate dur="75ms" begin="twitch-eyes-stage-2.end + 0ms" href="#twitch-logo-eyes1" id="twitch-eyes-stage-3" fill="freeze" attributeName="height" from="6" to="2"></animate>
+                        <animate dur="75ms" begin="twitch-eyes-stage-3.end + 0ms" href="#twitch-logo-eyes1" id="twitch-eyes-stage-4" fill="freeze" attributeName="height" from="2" to="6"></animate>
+                        <animate dur="250ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes1" fill="freeze" attributeName="x" from="23" to="20"></animate>
+                        <animate dur="250ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes1" fill="freeze" attributeName="y" from="11" to="14"></animate>
+                        <animate dur="1ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes1" fill="freeze" attributeName="height" to="6"></animate>
+                    </rect>
+
+                    <rect id="twitch-logo-eyes2" x="20" y="14" height="6" width="2" style="fill: #9147ff" transform="translate(5 0)">
+                        <animate dur="150ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes2" fill="freeze" attributeName="x" from="20" to="23"></animate>
+                        <animate dur="150ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes2" fill="freeze" attributeName="y" from="14" to="11"></animate>
+                        <animate dur="75ms" begin="twitch-logo-animation-start.begin + 0ms" href="#twitch-logo-eyes2" id="twitch-eyes-stage-1" fill="freeze" attributeName="height" from="6" to="2"></animate>
+                        <animate dur="75ms" begin="twitch-eyes-stage-1.end + 0ms" href="#twitch-logo-eyes2" id="twitch-eyes-stage-2" fill="freeze" attributeName="height" from="2" to="6"></animate>
+                        <animate dur="75ms" begin="twitch-eyes-stage-2.end + 0ms" href="#twitch-logo-eyes2" id="twitch-eyes-stage-3" fill="freeze" attributeName="height" from="6" to="2"></animate>
+                        <animate dur="75ms" begin="twitch-eyes-stage-3.end + 0ms" href="#twitch-logo-eyes2" id="twitch-eyes-stage-4" fill="freeze" attributeName="height" from="2" to="6"></animate>
+                        <animate dur="250ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes2" fill="freeze" attributeName="x" from="23" to="20"></animate>
+                        <animate dur="250ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes2" fill="freeze" attributeName="y" from="11" to="14"></animate>
+                        <animate dur="1ms" begin="twitch-logo-animation-end.begin + 0ms" href="#twitch-logo-eyes2" fill="freeze" attributeName="height" to="6"></animate>
+                    </rect>
 
                     <polygon points="0 0 0 40 40 40 40 0" fill="transparent" id="twitch-logo-animation-trigger">
                         <animate dur="1ms" begin="mouseenter" restart="whenNotActive" fill="freeze" href="#twitch-logo-animation-trigger" id="twitch-logo-animation-start"></animate>
@@ -118,7 +137,7 @@
 
     <div id="leftPanel">
         <p>OBSERWOWANE KANAŁY</p>
-        <a class="obserwowany tooltip-channel-container" href="https://www.twitch.tv/ngc4826">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/ngc4826">
             <div class="channel-photo live" style="background-image: url('./Media/Image/ngc4826-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -128,10 +147,10 @@
 
                 <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>8192</div>
             </div>
-            <span class="tooltip-channel"></span>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
-        <a class="obserwowany" href="https://www.twitch.tv/forhonorgame">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/forhonorgame">
             <div class="channel-photo" style="background-image: url('./Media/Image/forhonorgame-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -141,9 +160,10 @@
 
                 <div class="channel-info-status">Offline</div>
             </div>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
-        <a class="obserwowany" href="https://www.twitch.tv/rtgamecrowd">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/rtgamecrowd">
             <div class="channel-photo" style="background-image: url('./Media/Image/rtgamecrowd-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -153,9 +173,10 @@
 
                 <div class="channel-info-status">Offline</div>
             </div>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
-        <a class="obserwowany" href="https://www.twitch.tv/rainbow6">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/rainbow6">
             <div class="channel-photo" style="background-image: url('./Media/Image/rainbow6-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -165,9 +186,10 @@
 
                 <div class="channel-info-status">Offline</div>
             </div>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
-        <a class="obserwowany" href="https://www.twitch.tv/techland">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/techland">
             <div class="channel-photo" style="background-image: url('./Media/Image/techland-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -177,6 +199,7 @@
 
                 <div class="channel-info-status">Offline</div>
             </div>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
         <div>
@@ -185,7 +208,7 @@
         
         <p>POLECANE KANAŁY</p>
 
-        <a class="obserwowany" href="https://www.twitch.tv/fextralife">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/fextralife">
             <div class="channel-photo live" style="background-image: url('./Media/Image/fextralife-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -195,9 +218,10 @@
 
                 <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>4096</div>
             </div>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
-        <a class="obserwowany" href="https://www.twitch.tv/warframe">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/warframe">
             <div class="channel-photo live" style="background-image: url('./Media/Image/warframe-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -207,9 +231,10 @@
 
                 <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>999</div>
             </div>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
-        <a class="obserwowany" href="https://www.twitch.tv/hypnotizd">
+        <a class="obserwowany channel-tooltip" href="https://www.twitch.tv/hypnotizd">
             <div class="channel-photo live" style="background-image: url('./Media/Image/hypnotizd-profile70.png');"></div>
             <div class="channel-info">
                 <div class=channel-info-desc>
@@ -219,6 +244,7 @@
 
                 <div class="channel-info-status"><span style="font-size: 10px">🔴 </span>2137</div>
             </div>
+            <div class="tooltip-text">Sample text</div>
         </a>
 
         <div>
@@ -375,6 +401,94 @@
                     <div class="category-container">
                         <div class="category">angielski</div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear-float"></div>
+
+        <div class="show-more-hr-container">
+            <hr class="show-more-hr"></hr>
+            <div class="show-more-button">
+                Pokaż więcej
+
+                <svg class="show-more-arrow" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                    <path d="M14.5 6.5L10 11 5.5 6.5 4 8l6 6 6-6-1.5-1.5z"></path>
+                </svg>
+            </div>
+            <hr class="show-more-hr"></hr>
+        </div>
+
+        <div id="recomended-channels">
+            <p id="recomended-channels-text">Klipy, które mogą Ci się spodobać</p>
+
+            <div class="channel-container">
+                <div class="shiftOnHover" data-channel-color="1">
+                    <img src="./Media/Image/recommender-channel-1.png" alt="">
+                </div>
+                <div class="image-container">
+                    <div class="profile-image" style="background-image: url('./Media/Image/recommender-channel-1-profile50.jpg')"></div>
+                </div>
+                <div class="info-container">
+                    <a class="info-container-stream-name">2 ACE in a row!!!</a>
+                    <a class="info-container-channel-name">VorticoseLine75</a>
+                    <a class="info-container-game">VALORANT</a>
+                </div>
+            </div>
+
+            <div class="channel-container clear700">
+                <div class="shiftOnHover" data-channel-color="2">
+                    <img src="./Media/Image/recommender-channel-2.png" alt="">
+                </div>
+                <div class="image-container">
+                    <div class="profile-image" style="background-image: url('./Media/Image/recommender-channel-2-profile50.jpg')"></div>
+                </div>
+                <div class="info-container">
+                    <a class="info-container-stream-name">69:0 KD</a>
+                    <a class="info-container-channel-name">Anomaly</a>
+                    <a class="info-container-game">VALORANT</a>
+                </div>
+            </div>
+
+            <div class="channel-container clear1000">
+                <div class="shiftOnHover" data-channel-color="3">
+                    <img src="./Media/Image/recommender-channel-3.png" alt="">
+                </div>
+                <div class="image-container">
+                    <div class="profile-image" style="background-image: url('./Media/Image/recommender-channel-3-profile50.jpg')"></div>
+                </div>
+                <div class="info-container">
+                    <a class="info-container-stream-name">Hermitcraft Fail</a>
+                    <a class="info-container-channel-name">docm77LIVE</a>
+                    <a class="info-container-game">Minecraft</a>
+                </div>
+            </div>
+
+            <div class="channel-container clear1400">
+                <div class="shiftOnHover" data-channel-color="4">
+                    <img src="./Media/Image/recommender-channel-4.png" alt="">
+                </div>
+                <div class="image-container">
+                    <div class="profile-image" style="background-image: url('./Media/Image/recommender-channel-4-profile50.jpg')"></div>
+                </div>
+                <div class="info-container">
+                    <a class="info-container-stream-name">1st Kuva Lich born</a>
+                    <a class="info-container-channel-name">Punch_L1ne</a>
+                    <a class="info-container-game">Warframe</a>
+                </div>
+            </div>
+
+            <div class="channel-container clear1800">
+                <div class="shiftOnHover" data-channel-color="5">
+                    <img src="./Media/Image/recommender-channel-5.png" alt="">
+                </div>
+                <div class="image-container">
+                    <div class="profile-image" style="background-image: url('./Media/Image/recommender-channel-5-profile50.jpg')"></div>
+                </div>
+                <div class="info-container">
+                    <a class="info-container-stream-name">Ellevens vs. Team Renewed</a>
+                    <a class="info-container-channel-name">RocketLeague</a>
+                    <a class="info-container-game">Rocket League</a>
                 </div>
             </div>
         </div>
