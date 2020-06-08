@@ -1,3 +1,5 @@
+@import "media.less";
+
 @container-width: 1200px;
 
 @section-topics-width: 100px;
@@ -116,6 +118,8 @@ body {
             font-weight: 600;
         }
 
+        @scrollbar-cont-height: 1337px;
+
         #searchbar {
             width: @searchbar-width;
             padding: 0 10px 15px 10px;
@@ -124,7 +128,9 @@ body {
             justify-content: flex-end;
 
             .searchbar-container {
-                height: 24px;
+                @scrollbar-cont-height: 24px;
+
+                height: @scrollbar-cont-height;
 
                 & > * {
                     float: left;

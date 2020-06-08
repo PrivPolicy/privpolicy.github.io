@@ -68,6 +68,7 @@
 body, html {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 #container {
@@ -170,9 +171,9 @@ body, html {
 }
 #container #channel-list #channel-content {
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 50px - 52px);
   padding: 10px 6px;
-  overflow-y: auto;
+  overflow: auto;
 }
 #container #channel-list #channel-content details {
   margin-bottom: 24px;
@@ -217,15 +218,46 @@ body, html {
   margin-right: 8px;
   fill: #8e9297;
 }
-#container #channel-list #channel-content .channel-section-container .channel svg.invite {
-  position: absolute;
-  right: 0px;
+#container #channel-list #channel-content .channel-section-container .channel div.tooltip-container {
   display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 4px;
+  padding: 2px;
+}
+#container #channel-list #channel-content .channel-section-container .channel div.tooltip-container svg.invite {
   width: 16px;
   height: 16px;
   cursor: pointer;
 }
-#container #channel-list #channel-content .channel-section-container .channel svg.invite:hover {
+#container #channel-list #channel-content .channel-section-container .channel div.tooltip-container .tooltip-up {
+  position: absolute;
+  padding: 8px;
+  width: 140px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  bottom: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  transform: translateX(calc(-100% + 28px));
+  z-index: 10000;
+  font-size: 12px;
+  white-space: nowrap;
+  text-align: center;
+}
+#container #channel-list #channel-content .channel-section-container .channel div.tooltip-container .tooltip-up::after {
+  content: "";
+  border-width: 6px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  position: absolute;
+  top: 100%;
+  left: calc(100% - 26px);
+  z-index: 10001;
+}
+#container #channel-list #channel-content .channel-section-container .channel:hover svg.invite {
   fill: #d2d3d4;
 }
 #container #channel-list #channel-content .channel-section-container .channel.max-users {
@@ -258,7 +290,7 @@ body, html {
   background-color: #393c43;
   color: #dcddd4;
 }
-#container #channel-list #channel-content .channel-section-container .channel:hover svg.invite {
+#container #channel-list #channel-content .channel-section-container .channel:hover div.tooltip-container {
   display: block;
 }
 #container #channel-list #channel-content .channel-section-container .channel:hover .max-users {
@@ -323,6 +355,76 @@ body, html {
 #container #channel-list #channel-content .channel-section-container .channel-members .member:hover span {
   color: #dcddd4;
   filter: brightness(0.9);
+}
+#container #channel-list #user-control {
+  width: 100%;
+  height: 52px;
+  background-color: #292b2f;
+}
+#container #channel-list #user-control .user-info {
+  width: 55%;
+  height: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container #channel-list #user-control .user-info .user-image {
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+  background-image: url("../img/users/1.webp");
+  background-size: contain;
+  background-position: center;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+}
+#container #channel-list #user-control .user-info .user-image .user-status {
+  position: absolute;
+  background-color: green;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  border: 2px solid #292b2f;
+  bottom: 0px;
+  right: 0px;
+}
+#container #channel-list #user-control .user-info .user-image:hover {
+  filter: brightness(0.9);
+}
+#container #channel-list #user-control .user-info .user-nickname .user-nick {
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+#container #channel-list #user-control .user-info .user-nickname .user-hash {
+  font-size: 11px;
+  color: #dcddd4;
+}
+#container #channel-list #user-control .user-icons {
+  width: 45%;
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container #channel-list #user-control .user-icons div {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#container #channel-list #user-control .user-icons div svg {
+  width: 20px;
+  height: 20px;
+  fill: #b9bbbe;
+  margin-left: 6px;
+  margin-top: 6px;
+}
+#container #channel-list #user-control .user-icons div:hover {
+  background-color: #32353a;
 }
 #container #chat-window {
   background-color: #36393f;
@@ -770,12 +872,39 @@ body, html {
   top: -12px;
   z-index: 10001;
 }
+#container .tooltip-container .tooltip-up {
+  display: none;
+  position: absolute;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  font-size: 12px;
+  white-space: nowrap;
+}
+#container .tooltip-container .tooltip-up::after {
+  content: "";
+  border-width: 6px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 6px);
+  z-index: 10001;
+}
 #container .tooltip-container:hover .tooltip-right {
   display: block;
 }
 #container .tooltip-container:hover .tooltip-down {
   display: block;
   position: absolute;
+}
+#container .tooltip-container:hover .tooltip-up {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1162,9 +1162,9 @@ body {
         width: calc((100% - 30px) / 3);
     }
 
-    /* .nav-item {
+    .nav-item {
         display: none;
-    } */
+    }
 }
 
 @media (max-width: 700px) {

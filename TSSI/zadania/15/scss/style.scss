@@ -22,6 +22,10 @@ $colors: (
     "channel-default-bg-hover": rgb(57, 60, 67),
     "channel-invite-hover": rgb(210,211,212),
 
+    "user-control-bg": rgb(41,43,47),
+    "user-control-bg-hover": rgb(50,53,58),
+    "user-control-svg-fill": rgb(185,187,190),
+
     "nitro-status-svg-color": rgb(220,221,222),
     "nitro-status-svg-bg": rgb(79,84,92),
 
@@ -58,6 +62,9 @@ $ranks: (
     "michal": #5959D9,
     "student": rgb(46,204,113)
 );
+
+$body-width: 100%;
+$body-height: 100%;
 
 @mixin float-left {
     float: left;
@@ -102,8 +109,9 @@ $ranks: (
 }
 
 body, html {
-    width: 100%;
-    height: 100%;
+    width: $body-width;
+    height: $body-height;
+    overflow: hidden;
 }
 
 #container {
@@ -227,9 +235,9 @@ body, html {
 
         #channel-content {
             width: 100%;
-            height: calc(100% - 50px);
+            height: calc(100% - 50px - 52px);
             padding: 10px 6px;
-            overflow-y: auto;
+            overflow: auto;
 
             details {
                 margin-bottom: 24px;
@@ -279,15 +287,51 @@ body, html {
                         fill: map-get($map: $colors, $key: channel-text-inactive);
                     }
 
-                    svg.invite {
-                        position: absolute;
-                        right: 0px;
+                    div.tooltip-container {
                         display: none;
-                        width: 16px;
-                        height: 16px;
-                        cursor: pointer;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: 4px;
+                        padding: 2px;
 
-                        &:hover {
+                        svg.invite {
+                            width: 16px;
+                            height: 16px;
+                            cursor: pointer;
+                        }
+
+                        .tooltip-up {
+                            position: absolute;
+                            padding: 8px;
+                            width: 140px;
+                            background-color: black;
+                            color: white;
+                            border-radius: 8px;
+                            bottom: calc(100% + 12px);
+                            left: 0;
+                            right: 0;
+                            transform: translateX(calc(-100% + 28px));
+                            z-index: 10000;
+                            font-size: 12px;
+                            white-space: nowrap;
+                            text-align: center;
+
+                            &::after {
+                                content: "";
+                                border-width: 6px;
+                                border-style: solid;
+                                border-color: black transparent transparent transparent;
+                                position: absolute;
+                                top: 100%;
+                                left: calc(100% - 26px);
+                                z-index: 10001;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        svg.invite {
                             fill: map-get($map: $colors, $key: channel-invite-hover);
                         }
                     }
@@ -328,7 +372,7 @@ body, html {
                     background-color: map-get($map: $colors, $key: channel-default-bg-hover);
                     color: map-get($map: $colors, $key: channel-text-hover);
 
-                    svg.invite {
+                    div.tooltip-container {
                         display: block;
                     }
 
@@ -409,6 +453,90 @@ body, html {
                             filter: brightness(0.9);
                         }
                     }
+                }
+            }
+        }
+
+        #user-control {
+            width: 100%;
+            height: 52px;
+            background-color: map-get($map: $colors, $key: user-control-bg);
+
+            .user-info {
+                width: 55%;
+                height: 100%;
+                @include float-left();
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .user-image {
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 6px;
+                    background-image: url("../img/users/1.webp");
+                    background-size: contain;
+                    background-position: center;
+                    border-radius: 16px;
+                    position: relative;
+                    cursor: pointer;
+
+                    .user-status {
+                        position: absolute;
+                        background-color: green;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 6px;
+                        border: 2px solid map-get($map: $colors, $key: user-control-bg);
+                        bottom: 0px;
+                        right: 0px;
+                    }
+                }
+
+                .user-image:hover {
+                    filter: brightness(0.9);
+                }
+
+                .user-nickname {
+                    .user-nick {
+                        font-size: 13px;
+                        font-weight: bold;
+                        color: map-get($map: $colors, $key: channel-text-active);
+                    }
+
+                    .user-hash {
+                        font-size: 11px;
+                        color: map-get($map: $colors, $key: channel-text-hover);
+                    }
+                }
+            }
+
+            .user-icons {
+                width: 45%;
+                height: 100%;
+                @include float-left();
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                div {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 6px;
+                    cursor: pointer;
+
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        fill: map-get($map: $colors, $key: user-control-svg-fill);
+                        margin-left: 6px;
+                        margin-top: 6px;
+                    }
+                }
+
+                div:hover {
+                    background-color: map-get($map: $colors, $key: user-control-bg-hover);
                 }
             }
         }
@@ -913,6 +1041,32 @@ body, html {
             }
         }
 
+        .tooltip-up {
+            display: none;
+            position: absolute;
+            padding: 8px;
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+            bottom: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            font-size: 12px;
+            white-space: nowrap;
+
+            &::after {
+                content: "";
+                border-width: 6px;
+                border-style: solid;
+                border-color: black transparent transparent transparent;
+                position: absolute;
+                top: 100%;
+                left: calc(50% - 6px);
+                z-index: 10001;
+            }
+        }
+
         &:hover {
             .tooltip-right {
                 display: block;
@@ -921,6 +1075,10 @@ body, html {
             .tooltip-down {
                 display: block;
                 position: absolute;
+            }
+
+            .tooltip-up {
+                display: block;
             }
         }
     }
