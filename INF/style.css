@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #25282b;
+    position: relative;
+}
+
+#container {
+    width: 60%;
+    min-width: 800px;
+    max-width: 1200px;
+    min-height: 100%;
+    background-color: #171a1d;
+    margin: 0 auto;
+    font-family: 'Source Code Pro', monospace;
+    padding: 20px;
+}
+
+#container .section p {
+    margin: 0;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    font-size: 28px;
+    color: whitesmoke;
+    background-color: black;
+    padding: 10px 10px;
+}
+
+#container .section:not(:first-child) p {
+    margin: 15px 0 0 0;
+}
+
+#container .section > div {
+    background-color: black;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+#container .section > div::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#container .section div .row {
+    width: 100%;
+    padding: 0 10px;
+    float: left;
+}
+
+#container .section div .row:not(:first-child) {
+    margin-top: 5px;
+}
+
+#container .section div .row .left {
+    width: 50%;
+    height: 100%;
+    float: left;
+    color: whitesmoke;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+    line-height: 50px;
+    cursor: default;
+}
+
+#container .section div .row .right {
+    width: 50%;
+    float: right;
+}
+
+#container .section div .row .right a {
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    float: left;
+    color: rgb(42,196,11);
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.1s;
+    font-size: 20px;
+}
+
+#container .section div .row .right a:hover {
+    background-color: rgb(48,48,48);
+}
+
+@media (max-width: 800px) {
+    #container {
+        width: 100%;
+        min-width: auto;
+    }
+
+    #container .section div .row:not(:first-child) {
+        margin-top: 25px;
+    }
+
+    #container .section div .row .left {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    
+    #container .section div .row .right {
+        width: 100%;
+    }
+    
+    #container .section div .row .right a {
+        width: 100%;
+    }
+}
+
+#wip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #25282b;
+    animation: fade-out 1s linear 5s;
+    animation-fill-mode: both;
+    text-align: center;
+    font-size: 52px;
+    color: whitesmoke;
+    font-family: 'Source Code Pro', monospace;
+}
+
+@keyframes fade-out {
+    0% {opacity: 1;}
+    99% {z-index: 2;}
+    100% {opacity: 0; display: none; z-index: -20;}
+}
