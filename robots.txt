@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /hidden/
+Disallow: /
+Allow: /index.html
+Allow: /TSSI/index.html
